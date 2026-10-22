@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DAMASS — Lounge &amp; Bar в Канаше</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#79797b",
+            "primary-container": "#08090b",
+            "on-secondary-container": "#342800",
+            "secondary-fixed": "#ffe088",
+            "secondary": "#e9c349",
+            "surface-container": "#1d1f25",
+            "surface-variant": "#33353b",
+            "on-surface": "#e2e2ea",
+            "background": "#111319",
+            "tertiary-fixed-dim": "#ffb77d",
+            "on-secondary": "#3c2f00",
+            "outline-variant": "#45474a",
+            "surface-container-high": "#282a30",
+            "surface-container-lowest": "#0c0e14",
+            "on-tertiary": "#4d2600",
+            "outline": "#909094",
+            "on-primary": "#303033",
+            "primary": "#c7c6c9",
+            "on-secondary-fixed": "#241a00",
+            "tertiary-container": "#140600",
+            "surface-tint": "#c7c6c9",
+            "on-background": "#e2e2ea",
+            "inverse-surface": "#e2e2ea",
+            "secondary-container": "#af8d11",
+            "on-error": "#690005",
+            "surface-dim": "#111319",
+            "error-container": "#93000a",
+            "on-tertiary-container": "#b86300",
+            "on-surface-variant": "#c6c6ca",
+            "on-primary-fixed": "#1b1c1e",
+            "tertiary": "#ffb77d",
+            "surface-container-highest": "#33353b",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "secondary-fixed-dim": "#e9c349",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#464749",
+            "inverse-primary": "#5e5e61",
+            "on-tertiary-fixed": "#2f1500",
+            "surface-container-low": "#191b21",
+            "primary-fixed-dim": "#c7c6c9",
+            "surface-bright": "#37393f",
+            "surface": "#111319",
+            "tertiary-fixed": "#ffdcc3",
+            "inverse-on-surface": "#2e3037",
+            "primary-fixed": "#e3e2e5",
+            "error": "#ffb4ab",
+            "on-secondary-fixed-variant": "#574500"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.375rem",
+            "space-md": "1.5rem",
+            "space-lg": "3rem",
+            "margin": "3rem",
+            "space-sm": "0.75rem",
+            "space-xl": "6rem",
+            "gutter": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "label-sm": ["Inter"],
+            "headline-lg": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Playfair Display"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "300" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "300" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.2em", "fontWeight": "500" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "28px", "letterSpacing": "0.05em", "fontWeight": "300" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar Header -->
+<header class="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-gutter py-space-md max-w-7xl mx-auto">
+<div class="flex items-center space-x-6">
+<a class="font-headline-md text-on-surface tracking-widest font-bold" href="#">DAMASS</a>
+<span class="hidden lg:inline-block text-body-sm text-on-surface-variant font-label-sm uppercase tracking-widest border-l border-outline-variant pl-6">Lounge &amp; Bar • Канаш</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#atmosphere">Атмосфера</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#menu">Кухня &amp; Гриль</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#bar">Бар &amp; Чай</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#hookah">Кальяны</a>
+<a class="text-label-sm font-label-sm uppercase text-primary hover:text-tertiary transition-colors duration-200" href="#reservation">Бронь стола</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a class="hidden sm:flex items-center space-x-2 text-label-sm font-label-sm text-secondary hover:underline" href="tel:+79373888002">
+<span class="material-symbols-outlined" style="font-size: 16px;">call</span>
+<span>+7 (937) 388-80-02</span>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- Atmospheric Hero Section -->
+<section class="relative min-h-[870px] flex items-center justify-center overflow-hidden px-gutter py-space-xl">
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="w-full h-full bg-cover bg-center" data-alt="A moody, high-end nocturnal lounge interior in deep obsidian black tones with warm amber candlelight glowing across brushed bronze metal tables, dark velvet seating, and subtle architectural shadows, evoking an exclusive editorial atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPTmr-pr-APKbdiYKzNSuNANHQd6nCq4OxuHQ0Ai1ik6dQL0R2IwfYPpJSPDOIZtt9lhaI4asPuguI2EPxo9L_nbvkYR8TNzV16yUye6Li11OnCCLer6N1pjyj99qlkKoKh-3QmevYz3N21mbt6hsdgbNHzf7-4OZDQRSDUuid_5lsHUu78yVFyN3VJE6lOtke89N3Zd0ZBv_v0KnsbQi8ueokWXx7iLZPVFSuqDYdTAYL69f07sgNjxreWy24nxZhosfS5b7I9B5I')"></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+<div class="relative z-20 max-w-4xl mx-auto text-center space-y-space-md">
+<div class="inline-flex items-center space-x-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-sm font-label-sm uppercase text-secondary tracking-widest">
+<span>Чебоксарская, 29</span>
+<span>•</span>
+<span>Ежедневно с 16:00</span>
+</div>
+<h1 class="font-headline-xl text-on-surface tracking-tight font-normal">
+          Вечерний отдых с европейской и восточной кухней в Канаше
+        </h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto font-light">
+          Чебоксарская, 29. Лаунж-зона, блюда на мангале, авторские кальяны и уединенные VIP-залы.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-space-sm">
+<a class="w-full sm:w-auto px-8 py-4 bg-secondary text-on-secondary font-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors duration-200 text-center font-medium" href="#reservation">
+            Забронировать стол
+          </a>
+<a class="w-full sm:w-auto px-8 py-4 border border-outline-variant text-on-surface font-label-sm uppercase tracking-widest hover:border-secondary hover:text-secondary transition-colors duration-200 text-center font-medium" href="#menu">
+            Смотреть меню кухни
+          </a>
+</div>
+</div>
+</section>
+<!-- Atmosphere & Spaces ("Залы и форматы") -->
+<section class="py-space-xl px-gutter max-w-7xl mx-auto" id="atmosphere">
+<div class="space-y-4 mb-space-lg">
+<span class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Пространство</span>
+<h2 class="font-headline-lg text-on-surface">Залы и форматы</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group relative bg-surface-container-low border border-outline-variant p-6 space-y-4 hover:border-secondary transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="An intimate corner of a high-end nocturnal lounge featuring plush dark charcoal velvet seating, low ambient amber lighting, brushed bronze accents, and minimal editorial styling, set against deep obsidian black walls." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcPN53ZYTBWUYhxRHx1a0ylkUEn4y4D6ONjc1Fj0e2YEYDeCh3levcg9aJBvGjAKmDiKlwQVEc2j9SmNSzk1271Il9U6EfFKmN0_wEbZ7qp3I4VZMhaJ71S6NzSPUmH036l8-X41nzcgpG0PL88DqyIShaPdCBCLTcjyEshKdmIlbjpw2ELQix2pXSzDE2TCzRDtj9ijRwrbC_KSMK_LkS3P6_RYbMUE7dN1veNmHGAMSUnDor2_4-rzcAHPIcxFYsOV_6D1I_u3JD')"></div>
+</div>
+<h3 class="font-headline-md text-on-surface">Основной Лаунж-зал</h3>
+<p class="font-body-md text-on-surface-variant">Просторное и уютное пространство с приглушенным светом, комфортными диванами и расслабляющей музыкальной атмосферой для идеального вечера.</p>
+</div>
+<div class="group relative bg-surface-container-low border border-outline-variant p-6 space-y-4 hover:border-secondary transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A private VIP lounge room with luxurious dark wood paneling, warm candlelight reflection on polished brass surfaces, secluded seating arrangements, and an exclusive moody atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlveEimPQ3tl6_fhlfHC0wJMDTM7BPMmvw7zmEj8cu-FDqHlI9TjSC4k4VSo9uWx1quUXfY9V-sOMUhVSL73k-xkabuRpBG0yjlN9-z2CH7GfphKgY0fWtd-GLSQMhmMP5ExG_dB6TNF_KRrLOmh5d1RBYfU5vAImdv5SpvERtXnvl4_w0UweycFS4_TMsOje3iWdSMOQTn8WCEDVbP-_AdXorA5A59jekMQ36meQ-ns46DDmVVQxPsdOA90GypHAfRLnUScRVMlLj')"></div>
+</div>
+<h3 class="font-headline-md text-on-surface">VIP-комнаты</h3>
+<p class="font-body-md text-on-surface-variant">Уединенные зоны для приватного общения, закрытых встреч и комфортного отдыха в узком кругу близких друзей.</p>
+</div>
+<div class="group relative bg-surface-container-low border border-outline-variant p-6 space-y-4 hover:border-secondary transition-colors duration-300">
+<div class="h-64 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A stylish bar and hookah lounge counter featuring glowing amber bottles, polished brass fixtures, soft directional lighting, and an upscale nocturnal hospitality aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGPL5sc2krOyY9Ad_At0VxD9D5cf7WtH0NhP4Lraa7zBUb1n_GxouAhT43ka54tJCLmBqovO8QGAdMGarC2ldRcoI-GK-Ea2lBcWNCBLhV-g5igv31mkjIXHvILz2v_bEnWdQE6jnGcWfiGErGogVWtVds5QZWdGYIwmm3-8p1CQzYrQDGjAxUVbDbljaFBHRexl_n4mB6XurQOMeI341CmyXECmhS0lZZIxo_54-Jcd1TrSKH3iR1PmbkDfTEMDpBo0wyfoK-hAV7')"></div>
+</div>
+<h3 class="font-headline-md text-on-surface">Бар и Кальянная зона</h3>
+<p class="font-body-md text-on-surface-variant">Контактный бар с авторской миксологией и премиальная коллекция ароматных кальянов от профессиональных мастеров.</p>
+</div>
+</div>
+</section>
+<!-- Curated Menu Highlights ("Кухня и Бар") -->
+<section class="py-space-xl px-gutter bg-surface-container-lowest border-y border-outline-variant" id="menu">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+<div class="space-y-4">
+<span class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Гастрономия</span>
+<h2 class="font-headline-lg text-on-surface">Кухня и Бар</h2>
+</div>
+<p class="text-body-md text-on-surface-variant mt-4 md:mt-0">Средний чек: 500–800 ₽</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Category 1 -->
+<div class="space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-secondary">Стейки и блюда на гриле</h3>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Фирменный шашлык на мангале</h4>
+<p class="font-body-sm text-on-surface-variant">Сочное мясо маринованное по секретному рецепту шефа</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">480 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Сочные бургеры DAMASS</h4>
+<p class="font-body-sm text-on-surface-variant">мраморная говядина, фирменный соус, картофель фри</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">420 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Ребрышки BBQ</h4>
+<p class="font-body-sm text-on-surface-variant">томленные в глазури с пряными специями</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">550 ₽</span>
+</div>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="space-y-6">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-secondary">Европейские закуски</h3>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Изысканная сырная тарелка</h4>
+<p class="font-body-sm text-on-surface-variant">крафтовые сыры, мед, орехи, сезонные ягоды</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">520 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Хрустящие брускетты</h4>
+<p class="font-body-sm text-on-surface-variant">с лососем, авокадо и творожным сыром</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">360 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Хрустящие куриные крылья</h4>
+<p class="font-body-sm text-on-surface-variant">в пикантном соусе с чесночным дипом</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">340 ₽</span>
+</div>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="space-y-6" id="bar">
+<div class="border-b border-outline-variant pb-4">
+<h3 class="font-headline-md text-secondary">Кальянная карта и чаи</h3>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Премиальный кальян</h4>
+<p class="font-body-sm text-on-surface-variant">широкий выбор табаков, чаши на фруктах</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">from 700 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Облепиха-розмарин</h4>
+<p class="font-body-sm text-on-surface-variant">фирменный согревающий ягодный чай</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">320 ₽</span>
+</div>
+<div class="flex justify-between items-baseline border-b border-outline-variant/50 pb-4">
+<div>
+<h4 class="font-body-lg text-on-surface font-medium">Марокканский чай</h4>
+<p class="font-body-sm text-on-surface-variant">свежая мята, лайм, специи и зеленый чай</p>
+</div>
+<span class="text-body-lg text-secondary font-mono">290 ₽</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation Block ("Бронь стола") -->
+<section class="py-space-xl px-gutter max-w-4xl mx-auto" id="reservation">
+<div class="bg-surface-container-high border border-outline-variant p-8 md:p-12 space-y-8">
+<div class="text-center space-y-4">
+<span class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Резервирование</span>
+<h2 class="font-headline-lg text-on-surface">Бронь стола</h2>
+<p class="font-body-md text-on-surface-variant max-w-lg mx-auto">Забронируйте столик заранее, чтобы провести незабываемый вечер в атмосферном лаунж-баре DAMASS.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm uppercase text-on-surface-variant">Дата</label>
+<input class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-secondary focus:ring-0" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm uppercase text-on-surface-variant">Время</label>
+<select class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-secondary focus:ring-0">
+<option>16:00</option>
+<option>18:00</option>
+<option>20:00</option>
+<option>22:00</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm uppercase text-on-surface-variant">Гости</label>
+<select class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface focus:border-secondary focus:ring-0">
+<option>1 персона</option>
+<option>2 персоны</option>
+<option>3-4 персоны</option>
+<option>5+ персон (VIP)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm uppercase text-on-surface-variant">Имя</label>
+<input class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface placeholder:text-outline focus:border-secondary focus:ring-0" placeholder="Ваше имя" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm font-label-sm uppercase text-on-surface-variant">Телефон</label>
+<input class="w-full bg-background border border-outline-variant px-4 py-3 text-on-surface placeholder:text-outline focus:border-secondary focus:ring-0" placeholder="+7 (___) ___-__-__" type="tel"/>
+</div>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row gap-4">
+<button class="flex-1 py-4 bg-secondary text-on-secondary font-label-sm uppercase tracking-widest hover:bg-secondary-fixed transition-colors duration-200 text-center font-medium" type="submit">
+              Подтвердить бронь
+            </button>
+<a class="px-6 py-4 border border-outline-variant text-on-surface font-label-sm uppercase tracking-widest hover:border-secondary hover:text-secondary transition-colors duration-200 text-center flex items-center justify-center space-x-2" href="https://wa.me/79373888002" target="_blank">
+<span class="material-symbols-outlined" style="font-size: 18px;">chat</span>
+<span>WhatsApp / Telegram</span>
+</a>
+</div>
+</form>
+</div>
+</section>
+<!-- Practical Information & Schedule Section -->
+<section class="py-space-lg px-gutter max-w-7xl mx-auto border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-3">
+<h4 class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Часы работы</h4>
+<p class="font-body-md text-on-surface">Пн–Чт: 16:00–00:00<br/>Пт–Сб: 16:00–01:00<br/>Вс: 16:00–00:00</p>
+</div>
+<div class="space-y-3">
+<h4 class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Контакты &amp; Адрес</h4>
+<p class="font-body-md text-on-surface">г. Канаш, Чебоксарская ул., 29<br/>Телефон: +7 (937) 388-80-02</p>
+</div>
+<div class="space-y-3">
+<h4 class="text-label-sm font-label-sm uppercase text-secondary tracking-widest">Социальные сети</h4>
+<div class="flex space-x-4 pt-1">
+<a class="text-on-surface hover:text-secondary transition-colors" href="#">Telegram: @cafe_damass</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface hover:text-secondary transition-colors" href="#">VK</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-gutter py-space-lg max-w-7xl mx-auto gap-4">
+<div class="font-headline-md text-on-surface">DAMASS</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#atmosphere">Menu</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#atmosphere">Atmosphere</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#reservation">Reservations</a>
+<a class="text-label-sm font-label-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+<div class="text-body-sm text-on-surface-variant">
+        © 2024 Editorial Lounge. All rights reserved.
+      </div>
+</div>
+</footer>
+</body></html>

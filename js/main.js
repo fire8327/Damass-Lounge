@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (statusDot && statusText) {
             if (isOpen) {
                 statusDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
-                statusText.innerHTML = '<span class="text-emerald-400 font-semibold">Открыто сейчас</span> • В залах горит вечерний свет';
+                statusText.innerHTML = '<span class="text-emerald-400 font-semibold">Открыто сейчас</span><span class="hidden 2xl:inline text-zinc-400"> • В залах горит свет</span>';
             } else {
                 statusDot.className = 'w-2 h-2 rounded-full bg-amber-400';
-                statusText.innerHTML = '<span class="text-amber-400 font-semibold">Ждем гостей с 16:00</span> • Принимаем брони онлайн';
+                statusText.innerHTML = '<span class="text-amber-400 font-semibold">Ждем с 16:00</span><span class="hidden 2xl:inline text-zinc-400"> • Бронь онлайн</span>';
             }
         }
     }

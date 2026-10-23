@@ -24,33 +24,47 @@
     <!-- Subtle Grain Texture Overlay -->
     <div class="grain-overlay" aria-hidden="true"></div>
 
-    <!-- TOP VERIFIED LIVE STATUS BAR -->
-    <div class="top-status-bar py-2 px-4 relative z-50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-y-1.5 gap-x-4 text-zinc-400 text-center md:text-left">
-            <div class="flex items-center gap-3 sm:gap-6 whitespace-nowrap text-[11px] sm:text-xs">
+    <!-- TOP VERIFIED LIVE STATUS BAR (FULLY RESPONSIVE) -->
+    <div class="top-status-bar py-2 px-4 relative z-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 text-zinc-400 text-xs">
+            
+            <!-- Left: Location & Hours -->
+            <div class="flex items-center gap-2.5 sm:gap-4 whitespace-nowrap text-[11px] sm:text-xs shrink-0">
                 <span class="flex items-center gap-1.5 text-zinc-300">
                     <span class="material-symbols-outlined text-sm text-[#d4af37]">location_on</span>
-                    г. Канаш, Чебоксарская ул., 29
+                    <span class="hidden sm:inline">г. Канаш, </span>Чебоксарская ул., 29
                 </span>
-                <span class="hidden sm:inline-flex items-center gap-1.5">
+                
+                <!-- Schedule: concise on laptop, full on ultra-wide 2xl -->
+                <span class="hidden md:inline-flex 2xl:hidden items-center gap-1.5 text-zinc-400">
+                    <span class="material-symbols-outlined text-sm text-zinc-500">schedule</span>
+                    Ежедневно с 16:00
+                </span>
+                <span class="hidden 2xl:inline-flex items-center gap-1.5 text-zinc-400">
                     <span class="material-symbols-outlined text-sm text-zinc-500">schedule</span>
                     Пн–Чт, Вс: 16:00–00:00 • Пт–Сб: 16:00–01:00
                 </span>
             </div>
 
-            <div class="flex items-center gap-3 sm:gap-5 text-[11px] sm:text-xs whitespace-nowrap">
+            <!-- Right: Dynamic Status, Rating & Check -->
+            <div class="flex items-center gap-2.5 sm:gap-3.5 text-[11px] sm:text-xs whitespace-nowrap shrink-0">
                 <!-- Dynamic Live Status -->
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-1.5">
                     <span id="statusDot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
-                    <span id="statusText" class="text-zinc-300">Канаш: <span id="kanashTime" class="font-mono text-[#d4af37]">--:--</span></span>
+                    <span id="statusText" class="text-zinc-300 font-medium">Открыто</span>
                 </div>
-                <span class="hidden md:inline text-zinc-700">|</span>
-                <span class="hidden md:inline text-amber-400/90 font-medium">
-                    ⭐ 4.1 на Яндекс Картах (105+ отзывов)
+                
+                <!-- Rating -->
+                <span class="hidden sm:inline text-zinc-700">|</span>
+                <span class="hidden sm:inline-flex items-center gap-1 text-amber-400/90 font-medium">
+                    ⭐ 4.1 <span class="hidden xl:inline">(105+ отзывов)</span>
                 </span>
+                
+                <!-- Check -->
                 <span class="hidden lg:inline text-zinc-700">|</span>
-                <span class="hidden lg:inline text-zinc-400">Средний чек: 500 – 800 ₽</span>
+                <span class="hidden lg:inline text-zinc-400">Чек: 500–800 ₽</span>
             </div>
+
         </div>
     </div>
 

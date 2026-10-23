@@ -371,28 +371,20 @@ body {
   font-weight: 600;
 }
 
-/* Category Filter Tabs — Modern Haute-Cuisine Capsule */
-.menu-tabs-capsule {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.menu-tabs-capsule::-webkit-scrollbar {
-  display: none;
-}
-
+/* Category Filter Tabs — Modern Haute-Cuisine Pill Chips */
 .editorial-tab {
-  padding: 8px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
   border-radius: 9999px;
-  font-size: 0.74rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.3s var(--ease-cinematic);
   white-space: nowrap;
@@ -400,22 +392,23 @@ body {
 
 @media (min-width: 640px) {
   .editorial-tab {
-    padding: 9px 22px;
-    font-size: 0.76rem;
+    padding: 10px 22px;
+    font-size: 0.77rem;
     letter-spacing: 0.1em;
   }
 }
 
 .editorial-tab:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.06);
 }
 
 .editorial-tab.active {
   background: var(--gold-gradient);
+  border-color: rgba(255, 255, 255, 0.2);
   color: #060709;
   font-weight: 700;
-  border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
 }
 

@@ -472,15 +472,20 @@
     <section id="menu" class="py-24 bg-[#0a0c10] border-b border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-                <div>
-                    <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Кухня заведения</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Европейские и восточные блюда</h2>
-                    <p class="text-zinc-400 text-xs sm:text-sm mt-2">Средний чек: 500 – 800 ₽ • Еда навынос и предзаказ к столу</p>
+            <!-- SECTION HEADER & CATEGORY TABS (SEPARATE FULL-WIDTH ROW, NO OVERFLOW) -->
+            <div class="mb-10 sm:mb-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7">
+                    <div>
+                        <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Кухня заведения</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">Европейские и восточные блюда</h2>
+                    </div>
+                    <p class="text-zinc-400 text-xs sm:text-sm max-w-md">
+                        Средний чек: 500 – 800 ₽ • Еда навынос и предзаказ к столу
+                    </p>
                 </div>
 
-                <!-- CATEGORY TABS (LUXURY SEGMENTED PILL) -->
-                <div class="menu-tabs-capsule p-1 sm:p-1.5 rounded-full bg-[#11141b] border border-white/10 shadow-2xl inline-flex flex-wrap items-center gap-1 shrink-0">
+                <!-- CATEGORY TABS (FREELY WRAPPING CHIPS, NO CUTOFF, NO SCROLLBAR) -->
+                <div class="flex flex-wrap items-center gap-2 sm:gap-3 pb-3 border-b border-white/5">
                     <button class="editorial-tab active" data-filter="all">Все позиции</button>
                     <button class="editorial-tab" data-filter="grill">Мангал & Гриль</button>
                     <button class="editorial-tab" data-filter="snacks">Закуски & Бургеры</button>
@@ -488,14 +493,14 @@
                 </div>
             </div>
 
-            <!-- DISHES LIST (AUTHENTIC MENU FORMAT WITH REFINED AESTHETICS) -->
+            <!-- DISHES LIST (ALL CARDS HAVE MATCHING 16/10 BRAND/PHOTO FRAMES) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- DISH 1: МАНГАЛ -->
                 <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="grill">
                     <div>
                         <div class="editorial-frame aspect-[16/10]">
-                            <img src="images/food_grill.jpg" alt="Блюда на мангале" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
+                            <img src="images/food_grill.jpg" alt="Блюда на мангале" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-baseline gap-2 mb-2">
@@ -513,11 +518,11 @@
                     </div>
                 </div>
 
-                <!-- DISH 2: БУРГЕРЫ -->
+                <!-- DISH 2: БУРГЕРЫ (BRAND GASTRONOMY PLACEHOLDER) -->
                 <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="snacks">
                     <div>
                         <div class="editorial-frame aspect-[16/10]">
-                            <img src="images/food_grill.jpg" alt="Бургеры" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
+                            <img src="images/placeholder_burger.svg" alt="Фирменные бургеры DAMASS" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-baseline gap-2 mb-2">
@@ -535,17 +540,21 @@
                     </div>
                 </div>
 
-                <!-- DISH 3: ЗАКУСКИ К ПИВУ -->
+                <!-- DISH 3: ЗАКУСКИ (BRAND GASTRONOMY PLACEHOLDER) -->
                 <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="snacks">
-                    <div class="p-6">
-                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Для дружной компании</span>
-                        <div class="flex justify-between items-baseline gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-white">Сырная и мясная тарелка</h3>
-                            <span class="text-[#d4af37] font-mono font-bold text-base">от 490 ₽</span>
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/placeholder_cheese.svg" alt="Сырная и мясная тарелка" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Идеальное дополнение к вечерним напиткам: ассорти сыров, мясные деликатесы, мед, орехи и оливки.
-                        </p>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Сырная и мясная тарелка</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 490 ₽</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs leading-relaxed">
+                                Идеальное дополнение к вечерним напиткам: ассорти сыров, мясные деликатесы, мед, орехи и оливки.
+                            </p>
+                        </div>
                     </div>
                     <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
                         <span>Для компании</span>
@@ -557,7 +566,7 @@
                 <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
                     <div>
                         <div class="editorial-frame aspect-[16/10]">
-                            <img src="images/tea_drinks.jpg" alt="Чайная церемония" onerror="this.src='https://avatars.mds.yandex.net/get-altay/12728107/2a0000019003787736a780607af271611a5b/XXL'"/>
+                            <img src="images/tea_drinks.jpg" alt="Чайная церемония" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
                         <div class="p-6">
                             <div class="flex justify-between items-baseline gap-2 mb-2">
@@ -575,17 +584,21 @@
                     </div>
                 </div>
 
-                <!-- DISH 5: БАР & КРАФТ -->
+                <!-- DISH 5: БАР & КРАФТ (BRAND GASTRONOMY PLACEHOLDER) -->
                 <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
-                    <div class="p-6">
-                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Освежающая линейка</span>
-                        <div class="flex justify-between items-baseline gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-white">Крафтовое пиво & Напитки</h3>
-                            <span class="text-[#d4af37] font-mono font-bold text-base">от 220 ₽</span>
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/placeholder_bar.svg" alt="Крафтовое пиво & Напитки" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Широкий ассортимент крафтового пенного, освежающие безалкогольные коктейли, лимонады и свежесваренный кофе.
-                        </p>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Крафтовое пиво & Напитки</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 220 ₽</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs leading-relaxed">
+                                Широкий ассортимент крафтового пенного, освежающие безалкогольные коктейли, лимонады и свежесваренный кофе.
+                            </p>
+                        </div>
                     </div>
                     <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
                         <span>Барное меню</span>
@@ -593,17 +606,21 @@
                     </div>
                 </div>
 
-                <!-- DISH 6: КАЛЬЯНЫ -->
+                <!-- DISH 6: КАЛЬЯНЫ (AUTHENTIC HOOKAH PHOTO) -->
                 <div id="hookah" class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
-                    <div class="p-6">
-                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Фирменный лаунж</span>
-                        <div class="flex justify-between items-baseline gap-2 mb-2">
-                            <h3 class="font-display font-bold text-lg text-white">Паровые коктейли DAMASS</h3>
-                            <span class="text-[#d4af37] font-mono font-bold text-base">от 700 ₽</span>
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/hookah_lounge.jpg" alt="Паровые коктейли DAMASS" onerror="this.src='images/placeholder_damass.svg'"/>
                         </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Большой парк премиальных кальянов, классические и фруктовые чаши, индивидуальный подбор крепости и вкусовых миксов.
-                        </p>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Паровые коктейли DAMASS</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 700 ₽</span>
+                            </div>
+                            <p class="text-zinc-400 text-xs leading-relaxed">
+                                Большой парк премиальных кальянов, классические и фруктовые чаши, индивидуальный подбор крепости и вкусовых миксов.
+                            </p>
+                        </div>
                     </div>
                     <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
                         <span>18+</span>

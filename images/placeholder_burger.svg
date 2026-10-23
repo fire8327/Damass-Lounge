@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Dark Obsidian Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#181c26"/>
+      <stop offset="55%" stop-color="#0d0f15"/>
+      <stop offset="100%" stop-color="#06070a"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf0cd"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#aa8322"/>
+      <stop offset="100%" stop-color="#694e0f"/>
+    </linearGradient>
+
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(212,175,55,0.1)"/>
+      <stop offset="50%" stop-color="rgba(212,175,55,0.7)"/>
+      <stop offset="100%" stop-color="rgba(212,175,55,0.1)"/>
+    </linearGradient>
+
+    <!-- Pattern -->
+    <pattern id="mesh" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 30 M 0 0 L 30 30" fill="none" stroke="rgba(212,175,55,0.03)" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGlow)"/>
+  <rect width="800" height="500" fill="url(#mesh)"/>
+
+  <!-- Outer Border Frame -->
+  <rect x="25" y="25" width="750" height="450" fill="none" stroke="url(#goldBorder)" stroke-width="1.2"/>
+  <rect x="35" y="35" width="730" height="430" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Corner Art-Deco Ornaments -->
+  <path d="M 25 55 L 55 25 M 25 65 L 65 25" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 775 55 L 745 25 M 775 65 L 735 25" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 25 445 L 55 475 M 25 435 L 65 475" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 775 445 L 745 475 M 775 435 L 735 475" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+
+  <!-- Center Emblem -->
+  <g transform="translate(400, 195)">
+    <!-- Outer Diamond -->
+    <rect x="-48" y="-48" width="96" height="96" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" transform="rotate(45)" opacity="0.8"/>
+    <rect x="-40" y="-40" width="80" height="80" fill="#090b0f" stroke="rgba(212,175,55,0.3)" stroke-width="1" transform="rotate(45)"/>
+    
+    <!-- Burger / Grill Silhouette Motif -->
+    <path d="M -22 -6 Q 0 -26 22 -6 Z" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+    <line x1="-24" y1="0" x2="24" y2="0" stroke="url(#goldGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -20 6 C -15 9, -10 3, -5 7 C 0 10, 5 4, 10 7 C 15 10, 20 6, 20 6" fill="none" stroke="#d4af37" stroke-width="1.8"/>
+    <path d="M -22 13 Q 0 20 22 13" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+  </g>
+
+  <!-- Typography -->
+  <!-- Category Tag -->
+  <text x="400" y="305" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#d4af37" letter-spacing="4" text-anchor="middle">
+    SIGNATURE RECIPE • ГРИЛЬ &amp; БРИОШЬ
+  </text>
+
+  <!-- Title -->
+  <text x="400" y="342" font-family="'Playfair Display', serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="6" text-anchor="middle">
+    DAMASS BURGER
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="375" font-family="'Cormorant Garamond', serif" font-size="16" font-style="italic" fill="#8e9bb0" letter-spacing="2" text-anchor="middle">
+    Фирменная рецептура • Натуральное мясо • Сыр Чеддер
+  </text>
+
+  <!-- Bottom Stamp -->
+  <line x1="330" y1="410" x2="470" y2="410" stroke="url(#goldBorder)" stroke-width="1"/>
+  <text x="400" y="428" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="3" text-anchor="middle">
+    DAMASS LOUNGE &amp; BAR • КАНАШ
+  </text>
+</svg>

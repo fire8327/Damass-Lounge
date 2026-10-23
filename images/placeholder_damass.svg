@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Dark Obsidian Gradient -->
+    <radialGradient id="bgGlowBrand" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#191c26"/>
+      <stop offset="55%" stop-color="#0c0e14"/>
+      <stop offset="100%" stop-color="#06070a"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="goldGradientBrand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf0cd"/>
+      <stop offset="35%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#aa8322"/>
+      <stop offset="100%" stop-color="#694e0f"/>
+    </linearGradient>
+
+    <linearGradient id="goldBorderBrand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(212,175,55,0.1)"/>
+      <stop offset="50%" stop-color="rgba(212,175,55,0.7)"/>
+      <stop offset="100%" stop-color="rgba(212,175,55,0.1)"/>
+    </linearGradient>
+
+    <!-- Pattern -->
+    <pattern id="meshBrand" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 30 M 0 0 L 30 30" fill="none" stroke="rgba(212,175,55,0.03)" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGlowBrand)"/>
+  <rect width="800" height="500" fill="url(#meshBrand)"/>
+
+  <!-- Outer Border Frame -->
+  <rect x="25" y="25" width="750" height="450" fill="none" stroke="url(#goldBorderBrand)" stroke-width="1.2"/>
+  <rect x="35" y="35" width="730" height="430" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Corner Art-Deco Ornaments -->
+  <path d="M 25 55 L 55 25 M 25 65 L 65 25" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 775 55 L 745 25 M 775 65 L 735 25" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 25 445 L 55 475 M 25 435 L 65 475" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+  <path d="M 775 445 L 745 475 M 775 435 L 735 475" stroke="#d4af37" stroke-width="1" opacity="0.6"/>
+
+  <!-- Center Emblem (DAMASS Architectural Monogram 'D') -->
+  <g transform="translate(400, 195)">
+    <!-- Outer Diamond -->
+    <rect x="-52" y="-52" width="104" height="104" fill="none" stroke="url(#goldGradientBrand)" stroke-width="1.5" transform="rotate(45)" opacity="0.8"/>
+    <rect x="-44" y="-44" width="88" height="88" fill="#090b0f" stroke="rgba(212,175,55,0.3)" stroke-width="1" transform="rotate(45)"/>
+    
+    <!-- Monogram D -->
+    <text x="0" y="16" font-family="'Playfair Display', serif" font-size="44" font-weight="900" fill="url(#goldGradientBrand)" text-anchor="middle">
+      D
+    </text>
+  </g>
+
+  <!-- Typography -->
+  <!-- Category Tag -->
+  <text x="400" y="305" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#d4af37" letter-spacing="4" text-anchor="middle">
+    SIGNATURE COLLECTION • KANASH
+  </text>
+
+  <!-- Title -->
+  <text x="400" y="342" font-family="'Playfair Display', serif" font-size="28" font-weight="900" fill="#ffffff" letter-spacing="6" text-anchor="middle">
+    DAMASS LOUNGE
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="375" font-family="'Cormorant Garamond', serif" font-size="16" font-style="italic" fill="#8e9bb0" letter-spacing="2" text-anchor="middle">
+    Вечерняя атмосфера • Авторская кухня &amp; бар
+  </text>
+
+  <!-- Bottom Stamp -->
+  <line x1="330" y1="410" x2="470" y2="410" stroke="url(#goldBorderBrand)" stroke-width="1"/>
+  <text x="400" y="428" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#64748b" letter-spacing="3" text-anchor="middle">
+    ЧЕБОКСАРСКАЯ УЛ., 29 • КАНАШ
+  </text>
+</svg>

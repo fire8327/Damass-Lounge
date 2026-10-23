@@ -26,19 +26,19 @@
 
     <!-- TOP VERIFIED LIVE STATUS BAR -->
     <div class="top-status-bar py-2 px-4 relative z-50">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-2 gap-x-4 text-zinc-400">
-            <div class="flex items-center gap-4 sm:gap-6 whitespace-nowrap">
-                <span class="flex items-center gap-2 text-zinc-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-between gap-y-1.5 gap-x-4 text-zinc-400 text-center md:text-left">
+            <div class="flex items-center gap-3 sm:gap-6 whitespace-nowrap text-[11px] sm:text-xs">
+                <span class="flex items-center gap-1.5 text-zinc-300">
                     <span class="material-symbols-outlined text-sm text-[#d4af37]">location_on</span>
                     г. Канаш, Чебоксарская ул., 29
                 </span>
-                <span class="hidden sm:inline-flex items-center gap-2">
+                <span class="hidden sm:inline-flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-sm text-zinc-500">schedule</span>
                     Пн–Чт, Вс: 16:00–00:00 • Пт–Сб: 16:00–01:00
                 </span>
             </div>
 
-            <div class="flex items-center gap-4 sm:gap-5 text-xs whitespace-nowrap">
+            <div class="flex items-center gap-3 sm:gap-5 text-[11px] sm:text-xs whitespace-nowrap">
                 <!-- Dynamic Live Status -->
                 <div class="flex items-center gap-2">
                     <span id="statusDot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
@@ -56,25 +56,25 @@
 
     <!-- MAIN NAVBAR -->
     <header class="sticky top-0 z-40 header-glass">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 sm:gap-4">
             
             <!-- BRANDMARK WITH ARCHITECTURAL MONOGRAM -->
-            <a href="#" class="flex items-center gap-3 group shrink-0">
-                <div class="w-9 h-9 sm:w-10 sm:h-10 border border-[#d4af37]/60 bg-gradient-to-b from-[#1c1810] to-[#090b0e] flex items-center justify-center text-[#d4af37] font-serif font-black text-lg sm:text-xl shadow-lg shadow-black/80 transition-transform duration-300 group-hover:scale-105 shrink-0">
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 border border-[#d4af37]/60 bg-gradient-to-b from-[#1c1810] to-[#090b0e] flex items-center justify-center text-[#d4af37] font-serif font-black text-base sm:text-xl shadow-lg shadow-black/80 transition-transform duration-300 group-hover:scale-105 shrink-0">
                     D
                 </div>
                 <div class="shrink-0">
-                    <span class="font-display font-black text-xl sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-white block leading-none">
+                    <span class="font-display font-black text-lg sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-white block leading-none">
                         DAMASS
                     </span>
-                    <span class="text-[8.5px] sm:text-[9px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#d4af37] font-semibold block mt-1 whitespace-nowrap">
+                    <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] sm:tracking-[0.28em] text-[#d4af37] font-semibold block mt-1 whitespace-nowrap">
                         Lounge & Bar • Канаш
                     </span>
                 </div>
             </a>
 
-            <!-- DESKTOP NAV -->
-            <nav class="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 shrink-0">
+            <!-- DESKTOP NAV (ACTIVATES ON XL 1280px+ FOR COMFORTABLE BREATHING ROOM) -->
+            <nav class="hidden xl:flex items-center gap-5 2xl:gap-8 shrink-0">
                 <a href="#curator" class="nav-link">Сценарии вечера</a>
                 <a href="#spaces" class="nav-link">Залы & VIP</a>
                 <a href="#menu" class="nav-link">Кухня & Гриль</a>
@@ -84,64 +84,90 @@
             </nav>
 
             <!-- CALL / RESERVATION CTA -->
-            <div class="hidden sm:flex items-center gap-3.5 xl:gap-5 shrink-0">
-                <a href="tel:+79373888002" class="text-right group shrink-0 whitespace-nowrap">
-                    <span class="hidden xl:block text-[10px] text-zinc-400 uppercase tracking-widest font-medium">Бронь столов</span>
+            <div class="flex items-center gap-2.5 sm:gap-3.5 xl:gap-5 shrink-0">
+                <!-- Phone (Desktop/Tablet) -->
+                <a href="tel:+79373888002" class="hidden sm:block text-right group shrink-0 whitespace-nowrap">
+                    <span class="hidden 2xl:block text-[10px] text-zinc-400 uppercase tracking-widest font-medium">Бронь столов</span>
                     <span class="text-xs sm:text-sm font-bold text-white group-hover:text-[#d4af37] transition-colors font-mono tracking-tight whitespace-nowrap">+7 (937) 388-80-02</span>
                 </a>
-                <a href="#booking" class="btn-gold-luxe py-2.5 px-3.5 xl:py-3 xl:px-5 text-[11px] xl:text-xs whitespace-nowrap shrink-0">
+
+                <!-- Desktop CTA Button -->
+                <a href="#booking" class="hidden sm:inline-flex btn-gold-luxe py-2.5 px-3.5 xl:py-3 xl:px-5 text-[11px] xl:text-xs whitespace-nowrap shrink-0">
                     <span>Забронировать</span>
                 </a>
-            </div>
 
-            <!-- MOBILE MENU BTN -->
-            <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-sm bg-zinc-900/80 border border-white/10 text-zinc-300 hover:text-white shrink-0" aria-label="Открыть меню">
-                <span class="material-symbols-outlined text-xl">menu</span>
-            </button>
+                <!-- Quick Mobile Phone Button (< sm) -->
+                <a href="tel:+79373888002" class="sm:hidden w-9 h-9 border border-[#d4af37]/40 bg-[#12151c] flex items-center justify-center text-[#d4af37] rounded-sm shrink-0" aria-label="Позвонить в Дамасс">
+                    <span class="material-symbols-outlined text-base">call</span>
+                </a>
+
+                <!-- HAMBURGER MENU BUTTON (VISIBLE ON < XL) -->
+                <button id="mobileMenuBtn" class="xl:hidden p-2 sm:p-2.5 rounded-sm bg-zinc-900/80 border border-white/10 text-zinc-300 hover:text-white shrink-0" aria-label="Открыть меню">
+                    <span class="material-symbols-outlined text-xl">menu</span>
+                </button>
+            </div>
 
         </div>
 
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobileNav" class="hidden lg:hidden bg-[#0c0e12] border-b border-zinc-800 px-6 py-6 space-y-4 text-xs uppercase tracking-widest font-semibold">
-            <a href="#curator" class="block hover:text-[#d4af37]">Сценарии вечера</a>
-            <a href="#spaces" class="block hover:text-[#d4af37]">Залы и форматы</a>
-            <a href="#menu" class="block hover:text-[#d4af37]">Кухня и гриль</a>
-            <a href="#estimator" class="block hover:text-[#d4af37]">Расчет чека</a>
-            <a href="#booking" class="block hover:text-[#d4af37]">Бронь стола</a>
-            <a href="#contacts" class="block hover:text-[#d4af37]">Контакты</a>
-            <div class="pt-4 border-t border-zinc-800 flex flex-col gap-3">
-                <a href="tel:+79373888002" class="text-sm font-bold text-center text-white py-2 font-mono">
+        <!-- MOBILE / TABLET MENU DROPDOWN -->
+        <div id="mobileNav" class="hidden xl:hidden bg-[#0c0e12]/98 backdrop-blur-xl border-b border-zinc-800 px-6 py-6 space-y-3 text-xs uppercase tracking-widest font-semibold shadow-2xl">
+            <a href="#curator" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Сценарии вечера</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <a href="#spaces" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Залы и форматы</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <a href="#menu" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Кухня и гриль</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <a href="#estimator" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Расчет чека</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <a href="#booking" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Бронь стола</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <a href="#contacts" class="py-2.5 border-b border-white/5 flex items-center justify-between text-zinc-300 hover:text-[#d4af37] transition-colors">
+                <span>Контакты & Локация</span>
+                <span class="material-symbols-outlined text-sm text-zinc-600">chevron_right</span>
+            </a>
+            <div class="pt-3 flex flex-col gap-3">
+                <a href="tel:+79373888002" class="text-sm font-bold text-center text-white py-2 font-mono border border-white/10 rounded-sm">
                     +7 (937) 388-80-02
                 </a>
-                <a href="#booking" class="btn-gold-luxe w-full text-center py-3">
-                    Забронировать стол
+                <a href="#booking" class="btn-gold-luxe w-full text-center py-3 text-xs">
+                    Забронировать стол онлайн
                 </a>
             </div>
         </div>
     </header>
 
     <!-- HERO SECTION (HIGH LUXURY ASYMMETRICAL EDITORIAL) -->
-    <section class="relative pt-12 pb-24 md:py-28 overflow-hidden border-b border-white/5">
+    <section class="relative pt-8 sm:pt-12 pb-16 sm:pb-24 md:py-28 overflow-hidden border-b border-white/5">
         <!-- Ambient Warm Lighting -->
         <div class="ambient-glow top-1/4 left-1/3 w-[650px] h-[350px] bg-[#d4af37]/8"></div>
         <div class="ambient-glow bottom-0 right-10 w-[450px] h-[250px] bg-[#8e6f1f]/10"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
                 
                 <!-- HERO LEFT: EDITORIAL COMPOSITION -->
-                <div class="lg:col-span-7 space-y-7">
+                <div class="lg:col-span-7 space-y-6 sm:space-y-7">
                     
                     <!-- Metadata Header Tag -->
-                    <div class="flex items-center gap-3 text-xs tracking-[0.25em] uppercase text-[#d4af37] font-semibold">
-                        <span class="w-8 h-[1px] bg-[#d4af37]"></span>
+                    <div class="flex items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#d4af37] font-semibold">
+                        <span class="w-6 sm:w-8 h-[1px] bg-[#d4af37]"></span>
                         <span>Кафе & Lounge-Бар • Канаш</span>
                         <span class="text-zinc-600">•</span>
                         <span class="text-zinc-400 font-mono text-[10px]">EST. 2026</span>
                     </div>
 
                     <!-- Dramatic Headline with Serif & Italic Nuance -->
-                    <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[4rem] text-white leading-[1.08] tracking-tight">
+                    <h1 class="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-[3.8rem] text-white leading-[1.12] sm:leading-[1.08] tracking-tight">
                         Вечерняя атмосфера, кухня на мангале и <span class="italic font-editorial font-normal text-gold-gradient">уединенный отдых</span>
                     </h1>
 
@@ -149,31 +175,31 @@
                         Кафе-лаунж «Дамасс» на Чебоксарской, 29 — место для неспешного отдыха в приглушенном свете. Европейские и восточные блюда, сочные бургеры, шашлык, авторские паровые коктейли и закрытые VIP-комнаты с караоке.
                     </p>
 
-                    <!-- CTAS -->
-                    <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="#booking" class="btn-gold-luxe">
+                    <!-- CTAS (ADAPTIVE FULL WIDTH ON MOBILE, INLINE ON DESKTOP) -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+                        <a href="#booking" class="btn-gold-luxe w-full sm:w-auto text-center justify-center">
                             <span>Забронировать стол</span>
                             <span class="material-symbols-outlined text-sm">calendar_month</span>
                         </a>
-                        <a href="#curator" class="btn-editorial-ghost">
+                        <a href="#curator" class="btn-editorial-ghost w-full sm:w-auto text-center justify-center">
                             <span>Выбрать сценарий вечера</span>
                             <span class="material-symbols-outlined text-sm">tune</span>
                         </a>
                     </div>
 
-                    <!-- FACT METRICS STRIP (NOIR EDITORIAL STYLE) -->
-                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 text-left">
+                    <!-- FACT METRICS STRIP (CLEAN RESPONSIVE METRICS) -->
+                    <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10 text-left">
                         <div>
-                            <div class="font-display font-bold text-2xl lg:text-3xl text-white">4.1 ⭐</div>
-                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">105+ отзывов гостей</div>
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white">4.1 ⭐</div>
+                            <div class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider mt-1">105+ отзывов</div>
                         </div>
-                        <div class="border-l border-white/10 pl-6">
-                            <div class="font-display font-bold text-2xl lg:text-3xl text-[#d4af37] font-mono">16:00</div>
-                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Открываемся каждый вечер</div>
+                        <div class="border-l border-white/10 pl-3 sm:pl-6">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-[#d4af37] font-mono">16:00</div>
+                            <div class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider mt-1">Каждый вечер</div>
                         </div>
-                        <div class="border-l border-white/10 pl-6">
-                            <div class="font-display font-bold text-2xl lg:text-3xl text-white">VIP</div>
-                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Залы с караоке</div>
+                        <div class="border-l border-white/10 pl-3 sm:pl-6">
+                            <div class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white">VIP</div>
+                            <div class="text-[9px] sm:text-[10px] text-zinc-400 uppercase tracking-wider mt-1">С караоке</div>
                         </div>
                     </div>
 
@@ -259,8 +285,8 @@
             </div>
 
             <!-- Interactive Curator Display Card -->
-            <div class="editorial-card p-6 sm:p-10 bg-[#101319] border-[#d4af37]/30 shadow-2xl relative">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="editorial-card p-4 sm:p-8 lg:p-10 bg-[#101319] border-[#d4af37]/30 shadow-2xl relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                     
                     <!-- Dynamic Left Visual -->
                     <div class="lg:col-span-5 relative">
@@ -271,20 +297,20 @@
                                  class="w-full h-full object-cover transition-opacity duration-300"
                                  onerror="this.src='https://avatars.mds.yandex.net/get-altay/5235091/2a0000017c3d0d29c3a224d85b3f3257cc62/XXL'"/>
                         </div>
-                        <div class="absolute bottom-4 left-4 right-4 p-3 bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs">
-                            <span class="text-zinc-400">Формат отдыха:</span>
+                        <div class="absolute bottom-3 left-3 right-3 p-2.5 sm:p-3 bg-black/85 backdrop-blur-md border border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] sm:text-xs">
+                            <span class="text-zinc-400 text-[10px] sm:text-xs uppercase tracking-wider">Формат отдыха:</span>
                             <span id="curatorVibe" class="text-[#d4af37] font-semibold">Приглушенный чилл • Лаунж ритм • 18+</span>
                         </div>
                     </div>
 
                     <!-- Dynamic Right Details -->
-                    <div class="lg:col-span-7 space-y-5">
+                    <div class="lg:col-span-7 space-y-4 sm:space-y-5">
                         
                         <div>
                             <span id="curatorSubtitle" class="text-xs text-[#d4af37] uppercase tracking-widest font-semibold block mb-1">
                                 Неспешный вечер под мягкий фоновый саунд
                             </span>
-                            <h3 id="curatorTitle" class="font-display font-bold text-2xl sm:text-3xl text-white">
+                            <h3 id="curatorTitle" class="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-white">
                                 Дымный лаунж & Чайная церемония
                             </h3>
                         </div>
@@ -294,7 +320,7 @@
                         </p>
 
                         <!-- Highlights Specs -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 border-y border-white/10 text-xs">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 py-3 border-y border-white/10 text-xs">
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-[#d4af37]">table_restaurant</span>
                                 <div>
@@ -312,7 +338,7 @@
                         </div>
 
                         <!-- Gastronomy Pairing -->
-                        <div class="p-4 bg-[#0a0c10] border border-white/5 rounded-sm">
+                        <div class="p-3.5 sm:p-4 bg-[#0a0c10] border border-white/5 rounded-sm">
                             <div class="flex items-center gap-2 text-xs text-[#d4af37] font-semibold uppercase tracking-wider mb-1">
                                 <span class="material-symbols-outlined text-sm">restaurant_menu</span>
                                 <span>Гастрономическая пара сценария:</span>
@@ -322,13 +348,13 @@
                             </p>
                         </div>
 
-                        <!-- Action Button -->
-                        <div class="pt-2 flex flex-wrap items-center gap-4">
-                            <button id="curatorApplyBtn" class="btn-gold-luxe text-xs py-3.5 px-6">
+                        <!-- Action Button (Adaptive on Mobile) -->
+                        <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                            <button id="curatorApplyBtn" class="btn-gold-luxe w-full sm:w-auto text-xs py-3.5 px-6 text-center justify-center">
                                 <span>Забронировать этот сценарий</span>
                                 <span class="material-symbols-outlined text-sm">arrow_downward</span>
                             </button>
-                            <span class="text-[11px] text-zinc-400">
+                            <span class="text-[11px] text-zinc-400 text-center sm:text-left">
                                 Автоматически заполнит параметры столика в форме
                             </span>
                         </div>
@@ -597,28 +623,28 @@
     <section id="estimator" class="py-24 border-b border-white/5 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="editorial-card p-8 sm:p-12 bg-[#0e1117] border-[#d4af37]/35 shadow-2xl relative">
+            <div class="editorial-card p-4 sm:p-8 md:p-12 bg-[#0e1117] border-[#d4af37]/35 shadow-2xl relative">
                 
-                <div class="text-center max-w-2xl mx-auto mb-10">
+                <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
                     <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Прозрачный расчет</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Калькулятор депозита вечера</h2>
+                    <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl text-white">Калькулятор депозита вечера</h2>
                     <p class="text-zinc-400 text-xs sm:text-sm mt-3">
                         Оцените примерный чек для вашей компании на основе реальных цен заведения (средний чек: 500 – 800 ₽/чел).
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-2 sm:pt-4">
                     
                     <!-- Left: Controls -->
-                    <div class="space-y-6">
+                    <div class="space-y-5 sm:space-y-6">
                         
                         <!-- Guest Counter -->
                         <div>
                             <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Количество гостей в компании</label>
-                            <div class="flex items-center gap-4">
+                            <div class="flex items-center gap-3 sm:gap-4">
                                 <button type="button" id="calcMinusGuest" class="calc-counter-btn" aria-label="Меньше">−</button>
-                                <div class="px-6 py-2.5 bg-[#07080a] border border-white/10 rounded-sm text-center min-w-[90px]">
-                                    <span id="calcGuestsCount" class="font-mono font-bold text-xl text-white">4</span>
+                                <div class="px-5 sm:px-6 py-2.5 bg-[#07080a] border border-white/10 rounded-sm text-center min-w-[85px] sm:min-w-[90px]">
+                                    <span id="calcGuestsCount" class="font-mono font-bold text-lg sm:text-xl text-white">4</span>
                                     <span class="text-xs text-zinc-500 ml-1">чел</span>
                                 </div>
                                 <button type="button" id="calcPlusGuest" class="calc-counter-btn" aria-label="Больше">+</button>
@@ -628,7 +654,7 @@
                         <!-- Zone Selector -->
                         <div>
                             <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Предпочтительная зона</label>
-                            <div class="flex gap-3">
+                            <div class="flex gap-2.5 sm:gap-3">
                                 <button type="button" id="calcZoneMain" class="calc-switch-btn active flex-1">Основной лаунж</button>
                                 <button type="button" id="calcZoneVip" class="calc-switch-btn flex-1">VIP с караоке</button>
                             </div>
@@ -637,7 +663,7 @@
                         <!-- Hookah Selector -->
                         <div>
                             <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Паровые коктейли (кальяны)</label>
-                            <select id="calcHookahSelect" class="luxe-input py-2.5">
+                            <select id="calcHookahSelect" class="luxe-input py-2.5 text-xs sm:text-sm">
                                 <option value="0">Без кальяна</option>
                                 <option value="1" selected>1 фирменная чаша (+700 ₽)</option>
                                 <option value="2">2 авторские чаши (+1 400 ₽)</option>
@@ -646,10 +672,10 @@
                         </div>
 
                         <!-- Add-ons Checkboxes -->
-                        <div class="space-y-3 pt-1">
+                        <div class="space-y-2.5 sm:space-y-3 pt-1">
                             <label class="flex items-center gap-3 cursor-pointer text-xs text-zinc-300">
                                 <input type="checkbox" id="calcGrillToggle" checked class="w-4 h-4 accent-[#d4af37] rounded"/>
-                                <span>Блюда на мангале & сочные бургеры (горячий ужин)</span>
+                                <span>Блюда на мангале & бургеры (горячий ужин)</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer text-xs text-zinc-300">
                                 <input type="checkbox" id="calcTeaToggle" checked class="w-4 h-4 accent-[#d4af37] rounded"/>
@@ -660,8 +686,8 @@
                     </div>
 
                     <!-- Right: Dynamic Receipt Display -->
-                    <div class="p-6 bg-[#07080a] border border-[#d4af37]/30 rounded-sm relative">
-                        <div class="flex justify-between items-center pb-4 border-b border-white/10">
+                    <div class="p-4 sm:p-6 bg-[#07080a] border border-[#d4af37]/30 rounded-sm relative">
+                        <div class="flex justify-between items-center pb-3 sm:pb-4 border-b border-white/10">
                             <div>
                                 <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Ориентировочный итог</span>
                                 <span class="text-xs font-bold text-white uppercase tracking-wider">Чек компании</span>
@@ -669,8 +695,8 @@
                             <span class="text-[10px] px-2 py-1 bg-[#d4af37]/15 text-[#d4af37] font-mono rounded">DAMASS CALC</span>
                         </div>
 
-                        <div class="py-6 text-center">
-                            <div id="calcTotalSum" class="font-display font-black text-4xl sm:text-5xl text-gold-gradient">
+                        <div class="py-5 sm:py-6 text-center">
+                            <div id="calcTotalSum" class="font-display font-black text-3xl sm:text-4xl md:text-5xl text-gold-gradient">
                                 ~3 880 ₽
                             </div>
                             <div id="calcPerPerson" class="text-xs text-zinc-400 mt-2 font-mono">
@@ -682,7 +708,7 @@
                             * Сумма носит ознакомительный характер на основе выбранных позиций. Точный счет формируется по заказу в заведении.
                         </div>
 
-                        <button type="button" id="calcBookEstimateBtn" class="btn-gold-luxe w-full mt-5 text-xs py-3.5">
+                        <button type="button" id="calcBookEstimateBtn" class="btn-gold-luxe w-full mt-5 text-xs py-3.5 text-center justify-center">
                             Забронировать с этим расчетом
                         </button>
                     </div>
@@ -709,8 +735,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <!-- LEFT: BESPOKE VIP GUEST PASS (LIVE PREVIEW) -->
-                <div class="lg:col-span-5">
-                    <div class="guest-pass-card p-6 sm:p-8 rounded-sm">
+                <div class="lg:col-span-5 w-full">
+                    <div class="guest-pass-card p-4 sm:p-6 md:p-8 rounded-sm">
                         <div class="flex justify-between items-start border-b border-[#d4af37]/25 pb-4">
                             <div>
                                 <span class="font-display font-black text-xl tracking-[0.2em] text-white block">DAMASS</span>
@@ -721,31 +747,31 @@
                             </span>
                         </div>
 
-                        <div class="py-6 space-y-4 text-xs">
+                        <div class="py-5 sm:py-6 space-y-4 text-xs">
                             <div>
                                 <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Имя гостя</span>
-                                <span id="passGuestName" class="font-display font-bold text-lg text-white">Гость DAMASS</span>
+                                <span id="passGuestName" class="font-display font-bold text-base sm:text-lg text-white">Гость DAMASS</span>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4">
                                 <div>
                                     <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Дата визита</span>
-                                    <span id="passDate" class="text-sm font-medium text-white font-mono">Сегодня</span>
+                                    <span id="passDate" class="text-xs sm:text-sm font-medium text-white font-mono">Сегодня</span>
                                 </div>
                                 <div>
                                     <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Время</span>
-                                    <span id="passTime" class="text-sm font-medium text-white font-mono">19:00</span>
+                                    <span id="passTime" class="text-xs sm:text-sm font-medium text-white font-mono">19:00</span>
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4">
                                 <div>
                                     <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Зал</span>
-                                    <span id="passHall" class="text-sm font-medium text-[#d4af37]">Основной лаунж-зал</span>
+                                    <span id="passHall" class="text-xs sm:text-sm font-medium text-[#d4af37]">Основной лаунж-зал</span>
                                 </div>
                                 <div>
                                     <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Компания</span>
-                                    <span id="passGuests" class="text-sm font-medium text-white">3–4 человека</span>
+                                    <span id="passGuests" class="text-xs sm:text-sm font-medium text-white">3–4 человека</span>
                                 </div>
                             </div>
                         </div>
@@ -761,11 +787,11 @@
                 </div>
 
                 <!-- RIGHT: RESERVATION INPUT FORM -->
-                <div class="lg:col-span-7">
-                    <div class="editorial-card p-6 sm:p-10 bg-[#0e1117] border-white/10 shadow-2xl">
+                <div class="lg:col-span-7 w-full">
+                    <div class="editorial-card p-4 sm:p-8 md:p-10 bg-[#0e1117] border-white/10 shadow-2xl">
                         
-                        <form id="bookingForm" class="space-y-5">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <form id="bookingForm" class="space-y-4 sm:space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                                 
                                 <div>
                                     <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Ваше имя</label>
@@ -818,11 +844,11 @@
                             </div>
 
                             <div class="pt-3 text-center sm:text-left">
-                                <button type="submit" class="btn-gold-luxe w-full sm:w-auto min-w-[280px]">
+                                <button type="submit" class="btn-gold-luxe w-full sm:w-auto min-w-0 sm:min-w-[280px] text-center justify-center">
                                     <span>Отправить заявку на бронь</span>
                                     <span class="material-symbols-outlined text-sm">send</span>
                                 </button>
-                                <p class="text-[11px] text-zinc-500 mt-3">
+                                <p class="text-[11px] text-zinc-500 mt-3 text-center sm:text-left">
                                     Бронирование бесплатное. Администратор перезвонит вам для подтверждения стола.
                                 </p>
                             </div>
@@ -884,24 +910,24 @@
                         </div>
                     </div>
 
-                    <div class="pt-4 flex flex-wrap gap-3">
-                        <a href="https://t.me/cafe_damass" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
+                    <div class="pt-4 flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-3">
+                        <a href="https://t.me/cafe_damass" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4 text-center justify-center">
                             💬 Telegram @cafe_damass
                         </a>
-                        <a href="https://vk.ru/damasskanash" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
+                        <a href="https://vk.ru/damasskanash" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4 text-center justify-center">
                             ВКонтакте
                         </a>
-                        <a href="https://yandex.ru/maps/org/86547114816" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
+                        <a href="https://yandex.ru/maps/org/86547114816" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4 text-center justify-center">
                             Карточка на Яндекс Картах
                         </a>
                     </div>
                 </div>
 
                 <!-- EMBEDDED ACCURATE MAP WITH PIN -->
-                <div class="lg:col-span-6">
+                <div class="lg:col-span-6 w-full">
                     <div class="editorial-card p-2 sm:p-3 bg-[#0d0f14] border-white/10 shadow-2xl relative">
-                        <!-- Map iFrame with pure placemark pin -->
-                        <div class="relative w-full h-[420px] bg-zinc-950 overflow-hidden rounded-sm">
+                        <!-- Map iFrame with pure placemark pin (Adaptive Height) -->
+                        <div class="relative w-full h-[300px] sm:h-[380px] md:h-[420px] bg-zinc-950 overflow-hidden rounded-sm">
                             <iframe src="https://yandex.ru/map-widget/v1/?ll=47.472756%2C55.51433&z=17&pt=47.472756,55.51433,pm2orgm" 
                                     width="100%" 
                                     height="100%" 

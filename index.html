@@ -7,178 +7,211 @@
     
     <meta name="description" content="Кафе и лаунж-бар «Дамасс» в Канаше. Блюда на мангале, европейская кухня, авторские кальяны, VIP-комнаты с караоке. Чебоксарская, 29. Бронь столов: +7 (937) 388-80-02."/>
 
-    <!-- Google Fonts & Icons -->
+    <!-- Google Fonts & Material Symbols -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Styles -->
+    <!-- Custom Editorial Stylesheet -->
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body class="bg-[#07080a] text-[#f8fafc] selection:bg-[#c59b27] selection:text-black">
+<body class="selection:bg-[#d4af37] selection:text-black">
 
-    <!-- TOP VERIFIED STATUS BAR -->
-    <div class="bg-[#0f1115] border-b border-white/5 py-2 px-4 text-xs">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-zinc-400">
-            <div class="flex items-center gap-5">
-                <span class="flex items-center gap-1.5 text-zinc-300">
-                    <span class="material-symbols-outlined text-sm text-[#c59b27]">location_on</span>
+    <!-- Subtle Grain Texture Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- TOP VERIFIED LIVE STATUS BAR -->
+    <div class="top-status-bar py-2 px-4 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-2 gap-x-4 text-zinc-400">
+            <div class="flex items-center gap-4 sm:gap-6 whitespace-nowrap">
+                <span class="flex items-center gap-2 text-zinc-300">
+                    <span class="material-symbols-outlined text-sm text-[#d4af37]">location_on</span>
                     г. Канаш, Чебоксарская ул., 29
                 </span>
-                <span class="hidden sm:inline-flex items-center gap-1.5">
+                <span class="hidden sm:inline-flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm text-zinc-500">schedule</span>
                     Пн–Чт, Вс: 16:00–00:00 • Пт–Сб: 16:00–01:00
                 </span>
             </div>
-            <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-1.5 text-amber-400 font-medium">
+
+            <div class="flex items-center gap-4 sm:gap-5 text-xs whitespace-nowrap">
+                <!-- Dynamic Live Status -->
+                <div class="flex items-center gap-2">
+                    <span id="statusDot" class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span>
+                    <span id="statusText" class="text-zinc-300">Канаш: <span id="kanashTime" class="font-mono text-[#d4af37]">--:--</span></span>
+                </div>
+                <span class="hidden md:inline text-zinc-700">|</span>
+                <span class="hidden md:inline text-amber-400/90 font-medium">
                     ⭐ 4.1 на Яндекс Картах (105+ отзывов)
                 </span>
-                <span class="hidden md:inline text-zinc-600">|</span>
-                <span class="hidden md:inline text-zinc-400">Средний чек: 500 – 800 ₽</span>
+                <span class="hidden lg:inline text-zinc-700">|</span>
+                <span class="hidden lg:inline text-zinc-400">Средний чек: 500 – 800 ₽</span>
             </div>
         </div>
     </div>
 
     <!-- MAIN NAVBAR -->
-    <header class="sticky top-0 z-40 glass-nav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header class="sticky top-0 z-40 header-glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             
-            <!-- BRANDMARK -->
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#c59b27] to-[#855325] flex items-center justify-center text-black font-black font-serif text-xl shadow-lg shadow-amber-900/30">
+            <!-- BRANDMARK WITH ARCHITECTURAL MONOGRAM -->
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 border border-[#d4af37]/60 bg-gradient-to-b from-[#1c1810] to-[#090b0e] flex items-center justify-center text-[#d4af37] font-serif font-black text-lg sm:text-xl shadow-lg shadow-black/80 transition-transform duration-300 group-hover:scale-105 shrink-0">
                     D
                 </div>
-                <div>
-                    <span class="font-serif font-black text-2xl tracking-[0.18em] text-white block">
+                <div class="shrink-0">
+                    <span class="font-display font-black text-xl sm:text-2xl tracking-[0.18em] sm:tracking-[0.22em] text-white block leading-none">
                         DAMASS
                     </span>
-                    <span class="text-[9px] uppercase tracking-[0.25em] text-[#c59b27] font-semibold block -mt-1">
+                    <span class="text-[8.5px] sm:text-[9px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[#d4af37] font-semibold block mt-1 whitespace-nowrap">
                         Lounge & Bar • Канаш
                     </span>
                 </div>
             </a>
 
             <!-- DESKTOP NAV -->
-            <nav class="hidden lg:flex items-center gap-9 text-xs uppercase tracking-widest font-semibold text-zinc-400">
-                <a href="#spaces" class="hover:text-[#c59b27] transition-colors">Залы и форматы</a>
-                <a href="#menu" class="hover:text-[#c59b27] transition-colors">Кухня и гриль</a>
-                <a href="#hookah" class="hover:text-[#c59b27] transition-colors">Кальяны и бар</a>
-                <a href="#booking" class="hover:text-[#c59b27] transition-colors">Бронь стола</a>
-                <a href="#contacts" class="hover:text-[#c59b27] transition-colors">Контакты</a>
+            <nav class="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 shrink-0">
+                <a href="#curator" class="nav-link">Сценарии вечера</a>
+                <a href="#spaces" class="nav-link">Залы & VIP</a>
+                <a href="#menu" class="nav-link">Кухня & Гриль</a>
+                <a href="#estimator" class="nav-link">Расчет чека</a>
+                <a href="#booking" class="nav-link">Бронь стола</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
             </nav>
 
             <!-- CALL / RESERVATION CTA -->
-            <div class="hidden sm:flex items-center gap-4">
-                <a href="tel:+79373888002" class="text-right">
-                    <span class="text-[10px] text-zinc-400 uppercase tracking-widest block">Бронь столов</span>
-                    <span class="text-sm font-bold text-white hover:text-[#c59b27] transition-colors">+7 (937) 388-80-02</span>
+            <div class="hidden sm:flex items-center gap-3.5 xl:gap-5 shrink-0">
+                <a href="tel:+79373888002" class="text-right group shrink-0 whitespace-nowrap">
+                    <span class="hidden xl:block text-[10px] text-zinc-400 uppercase tracking-widest font-medium">Бронь столов</span>
+                    <span class="text-xs sm:text-sm font-bold text-white group-hover:text-[#d4af37] transition-colors font-mono tracking-tight whitespace-nowrap">+7 (937) 388-80-02</span>
                 </a>
-                <a href="#booking" class="btn-gold text-xs py-3 px-5">
-                    Забронировать
+                <a href="#booking" class="btn-gold-luxe py-2.5 px-3.5 xl:py-3 xl:px-5 text-[11px] xl:text-xs whitespace-nowrap shrink-0">
+                    <span>Забронировать</span>
                 </a>
             </div>
 
             <!-- MOBILE MENU BTN -->
-            <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg bg-zinc-900 border border-white/10 text-zinc-300 hover:text-white" aria-label="Меню">
-                <span class="material-symbols-outlined">menu</span>
+            <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-sm bg-zinc-900/80 border border-white/10 text-zinc-300 hover:text-white shrink-0" aria-label="Открыть меню">
+                <span class="material-symbols-outlined text-xl">menu</span>
             </button>
 
         </div>
 
         <!-- MOBILE MENU DROPDOWN -->
         <div id="mobileNav" class="hidden lg:hidden bg-[#0c0e12] border-b border-zinc-800 px-6 py-6 space-y-4 text-xs uppercase tracking-widest font-semibold">
-            <a href="#spaces" class="block hover:text-[#c59b27]">Залы и форматы</a>
-            <a href="#menu" class="block hover:text-[#c59b27]">Кухня и гриль</a>
-            <a href="#hookah" class="block hover:text-[#c59b27]">Кальяны и бар</a>
-            <a href="#booking" class="block hover:text-[#c59b27]">Бронь стола</a>
-            <a href="#contacts" class="block hover:text-[#c59b27]">Контакты</a>
+            <a href="#curator" class="block hover:text-[#d4af37]">Сценарии вечера</a>
+            <a href="#spaces" class="block hover:text-[#d4af37]">Залы и форматы</a>
+            <a href="#menu" class="block hover:text-[#d4af37]">Кухня и гриль</a>
+            <a href="#estimator" class="block hover:text-[#d4af37]">Расчет чека</a>
+            <a href="#booking" class="block hover:text-[#d4af37]">Бронь стола</a>
+            <a href="#contacts" class="block hover:text-[#d4af37]">Контакты</a>
             <div class="pt-4 border-t border-zinc-800 flex flex-col gap-3">
-                <a href="tel:+79373888002" class="text-sm font-bold text-center text-white py-2">
+                <a href="tel:+79373888002" class="text-sm font-bold text-center text-white py-2 font-mono">
                     +7 (937) 388-80-02
                 </a>
-                <a href="#booking" class="btn-gold w-full text-center py-3">
+                <a href="#booking" class="btn-gold-luxe w-full text-center py-3">
                     Забронировать стол
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (EDITORIAL MAGAZINE STYLE) -->
-    <section class="relative pt-16 pb-24 overflow-hidden border-b border-white/5">
-        <!-- Ambient Warm Glow -->
-        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#c59b27]/8 rounded-full blur-[140px] pointer-events-none"></div>
+    <!-- HERO SECTION (HIGH LUXURY ASYMMETRICAL EDITORIAL) -->
+    <section class="relative pt-12 pb-24 md:py-28 overflow-hidden border-b border-white/5">
+        <!-- Ambient Warm Lighting -->
+        <div class="ambient-glow top-1/4 left-1/3 w-[650px] h-[350px] bg-[#d4af37]/8"></div>
+        <div class="ambient-glow bottom-0 right-10 w-[450px] h-[250px] bg-[#8e6f1f]/10"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                 
-                <!-- HERO LEFT: EDITORIAL COPY -->
+                <!-- HERO LEFT: EDITORIAL COMPOSITION -->
                 <div class="lg:col-span-7 space-y-7">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-[#c59b27] uppercase tracking-widest font-semibold">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#c59b27]"></span>
-                        Кафе & Lounge-Бар в Канаше
+                    
+                    <!-- Metadata Header Tag -->
+                    <div class="flex items-center gap-3 text-xs tracking-[0.25em] uppercase text-[#d4af37] font-semibold">
+                        <span class="w-8 h-[1px] bg-[#d4af37]"></span>
+                        <span>Кафе & Lounge-Бар • Канаш</span>
+                        <span class="text-zinc-600">•</span>
+                        <span class="text-zinc-400 font-mono text-[10px]">EST. 2026</span>
                     </div>
 
-                    <h1 class="font-serif font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight">
-                        Вечерняя атмосфера, кухня на мангале и <span class="italic font-normal text-[#c59b27]">уединенный отдых</span>
+                    <!-- Dramatic Headline with Serif & Italic Nuance -->
+                    <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[4rem] text-white leading-[1.08] tracking-tight">
+                        Вечерняя атмосфера, кухня на мангале и <span class="italic font-editorial font-normal text-gold-gradient">уединенный отдых</span>
                     </h1>
 
-                    <p class="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed font-light">
+                    <p class="text-zinc-300 text-sm sm:text-base max-w-xl leading-relaxed font-light">
                         Кафе-лаунж «Дамасс» на Чебоксарской, 29 — место для неспешного отдыха в приглушенном свете. Европейские и восточные блюда, сочные бургеры, шашлык, авторские паровые коктейли и закрытые VIP-комнаты с караоке.
                     </p>
 
                     <!-- CTAS -->
                     <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="#booking" class="btn-gold">
+                        <a href="#booking" class="btn-gold-luxe">
                             <span>Забронировать стол</span>
                             <span class="material-symbols-outlined text-sm">calendar_month</span>
                         </a>
-                        <a href="#menu" class="btn-outline">
-                            <span>Меню кухни и бара</span>
+                        <a href="#curator" class="btn-editorial-ghost">
+                            <span>Выбрать сценарий вечера</span>
+                            <span class="material-symbols-outlined text-sm">tune</span>
                         </a>
                     </div>
 
-                    <!-- FACT STRIP -->
-                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 text-left">
+                    <!-- FACT METRICS STRIP (NOIR EDITORIAL STYLE) -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 text-left">
                         <div>
-                            <div class="font-serif font-bold text-2xl text-white">4.1 ⭐</div>
-                            <div class="text-[11px] text-zinc-400 uppercase tracking-wider mt-1">105+ отзывов гостей</div>
+                            <div class="font-display font-bold text-2xl lg:text-3xl text-white">4.1 ⭐</div>
+                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">105+ отзывов гостей</div>
                         </div>
-                        <div>
-                            <div class="font-serif font-bold text-2xl text-[#c59b27]">16:00</div>
-                            <div class="text-[11px] text-zinc-400 uppercase tracking-wider mt-1">Открываемся каждый вечер</div>
+                        <div class="border-l border-white/10 pl-6">
+                            <div class="font-display font-bold text-2xl lg:text-3xl text-[#d4af37] font-mono">16:00</div>
+                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Открываемся каждый вечер</div>
                         </div>
-                        <div>
-                            <div class="font-serif font-bold text-2xl text-white">VIP</div>
-                            <div class="text-[11px] text-zinc-400 uppercase tracking-wider mt-1">Залы с караоке</div>
+                        <div class="border-l border-white/10 pl-6">
+                            <div class="font-display font-bold text-2xl lg:text-3xl text-white">VIP</div>
+                            <div class="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Залы с караоке</div>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- HERO RIGHT: REAL ATMOSPHERE PHOTO -->
+                <!-- HERO RIGHT: MULTI-LAYERED EDITORIAL VISUAL FRAME -->
                 <div class="lg:col-span-5 relative">
-                    <div class="lounge-card p-3 shadow-2xl relative">
-                        <div class="img-frame aspect-[4/5] rounded-xl overflow-hidden">
-                            <img src="images/interior_main.jpg" 
-                                 alt="Лаунж зал Дамасс Канаш" 
-                                 class="w-full h-full object-cover"
-                                 onerror="this.src='https://avatars.mds.yandex.net/get-altay/4236413/2a00000179801803ced54c76278208dc80ed/XXL'"/>
-                        </div>
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
                         
-                        <!-- Floating Badge -->
-                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#0b0c10]/95 border border-white/10 shadow-2xl flex items-center justify-between">
-                            <div>
-                                <span class="text-xs font-serif font-bold text-white block">Лаунж-зал «Дамасс»</span>
-                                <span class="text-[11px] text-zinc-400">Мягкие диваны, приглушенный теплый свет</span>
+                        <!-- Background Deco Outline Frame -->
+                        <div class="absolute -top-4 -right-4 w-full h-full border border-[#d4af37]/25 z-0 pointer-events-none hidden sm:block"></div>
+
+                        <!-- Main Image Card -->
+                        <div class="editorial-card p-3 bg-[#0d0f14] shadow-2xl relative z-10 gold-corners">
+                            <div class="editorial-frame aspect-[4/5] overflow-hidden">
+                                <img src="images/interior_main.jpg" 
+                                     alt="Лаунж зал Дамасс Канаш" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.src='https://avatars.mds.yandex.net/get-altay/4236413/2a00000179801803ced54c76278208dc80ed/XXL'"/>
                             </div>
-                            <a href="tel:+79373888002" class="text-xs text-[#c59b27] font-bold hover:underline">
-                                Бронь →
-                            </a>
+                            
+                            <!-- Floating Editorial Stamp -->
+                            <div class="absolute top-6 right-6 px-3.5 py-1.5 bg-[#060709]/90 border border-[#d4af37]/40 text-[#d4af37] text-[10px] uppercase font-mono tracking-widest">
+                                Чебоксарская, 29
+                            </div>
+
+                            <!-- Floating Bottom Glass Plate -->
+                            <div class="p-4 mt-3 bg-[#11141b] border border-white/5 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-display font-bold text-white block">Лаунж-зал «Дамасс»</span>
+                                    <span class="text-[11px] text-zinc-400">Мягкие диваны, приглушенный теплый свет</span>
+                                </div>
+                                <a href="tel:+79373888002" class="text-xs text-[#d4af37] font-bold hover:underline tracking-wider uppercase font-mono">
+                                    Бронь →
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -186,16 +219,138 @@
         </div>
     </section>
 
-    <!-- SPACES & FORMATS SECTION -->
-    <section id="spaces" class="py-24 bg-[#0b0d11] border-b border-white/5">
+    <!-- ========================================================================
+         ORIGINAL BLOCK 1: DAMASS EVENING CURATOR (ИНТЕРАКТИВНЫЙ КУРАТОР ВЕЧЕРА)
+         Уникальный блок подбора сценария отдыха с синхронизацией и 1-click бронью
+         ======================================================================== -->
+    <section id="curator" class="py-24 bg-[#0a0c10] border-b border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <span class="text-[#c59b27] text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Пространство</span>
-                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-white">Залы и форматы отдыха</h2>
+                    <div class="flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-[#d4af37] font-semibold mb-2">
+                        <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        <span>Оригинальный сервис заведения</span>
+                    </div>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">
+                        Куратор вечернего сценария
+                    </h2>
                 </div>
-                <p class="text-zinc-400 text-xs sm:text-sm max-w-md">
+                <p class="text-zinc-400 text-xs sm:text-sm max-w-md leading-relaxed">
+                    Выберите настроение вашего визита — система подберет идеальное зонирование, гастрономическую пару и передаст параметры в бронирование.
+                </p>
+            </div>
+
+            <!-- Mood Switcher Tabs -->
+            <div class="flex flex-wrap items-center gap-3 mb-10 pb-2 border-b border-white/5">
+                <button class="mood-chip active" data-scenario="lounge">
+                    <span class="material-symbols-outlined text-base text-[#d4af37]">spa</span>
+                    <span>1. Дымный лаунж & Чай</span>
+                </button>
+                <button class="mood-chip" data-scenario="vip">
+                    <span class="material-symbols-outlined text-base text-[#d4af37]">mic</span>
+                    <span>2. Закрытый VIP & Караоке</span>
+                </button>
+                <button class="mood-chip" data-scenario="gourmet">
+                    <span class="material-symbols-outlined text-base text-[#d4af37]">outdoor_grill</span>
+                    <span>3. Кухня на мангале & Гриль</span>
+                </button>
+            </div>
+
+            <!-- Interactive Curator Display Card -->
+            <div class="editorial-card p-6 sm:p-10 bg-[#101319] border-[#d4af37]/30 shadow-2xl relative">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Dynamic Left Visual -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="editorial-frame aspect-[16/11] rounded-sm overflow-hidden border border-white/10 shadow-2xl">
+                            <img id="curatorImage" 
+                                 src="images/hookah_lounge.jpg" 
+                                 alt="Сценарий вечера в Дамасс" 
+                                 class="w-full h-full object-cover transition-opacity duration-300"
+                                 onerror="this.src='https://avatars.mds.yandex.net/get-altay/5235091/2a0000017c3d0d29c3a224d85b3f3257cc62/XXL'"/>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4 p-3 bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-zinc-400">Формат отдыха:</span>
+                            <span id="curatorVibe" class="text-[#d4af37] font-semibold">Приглушенный чилл • Лаунж ритм • 18+</span>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Right Details -->
+                    <div class="lg:col-span-7 space-y-5">
+                        
+                        <div>
+                            <span id="curatorSubtitle" class="text-xs text-[#d4af37] uppercase tracking-widest font-semibold block mb-1">
+                                Неспешный вечер под мягкий фоновый саунд
+                            </span>
+                            <h3 id="curatorTitle" class="font-display font-bold text-2xl sm:text-3xl text-white">
+                                Дымный лаунж & Чайная церемония
+                            </h3>
+                        </div>
+
+                        <p id="curatorDesc" class="text-zinc-300 text-xs sm:text-sm leading-relaxed">
+                            Идеально для перезагрузки после рабочего дня или приватной беседы. Мягкие диваны у бара, приглушенный теплый свет, авторские чаши от наших кальянных мастеров и прозрачный чайник со свежими ягодами и травами на огне.
+                        </p>
+
+                        <!-- Highlights Specs -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 border-y border-white/10 text-xs">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-[#d4af37]">table_restaurant</span>
+                                <div>
+                                    <span class="text-zinc-500 block text-[10px] uppercase tracking-wider">Рекомендуемая зона:</span>
+                                    <span id="curatorZone" class="text-white font-medium">Основной лаунж-зал (диваны)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-[#d4af37]">group</span>
+                                <div>
+                                    <span class="text-zinc-500 block text-[10px] uppercase tracking-wider">Вместимость:</span>
+                                    <span id="curatorGuests" class="text-white font-medium">2–4 персоны</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gastronomy Pairing -->
+                        <div class="p-4 bg-[#0a0c10] border border-white/5 rounded-sm">
+                            <div class="flex items-center gap-2 text-xs text-[#d4af37] font-semibold uppercase tracking-wider mb-1">
+                                <span class="material-symbols-outlined text-sm">restaurant_menu</span>
+                                <span>Гастрономическая пара сценария:</span>
+                            </div>
+                            <p id="curatorPairText" class="text-xs text-zinc-300">
+                                Паровой коктейль DAMASS + Согревающий облепиховый чай с розмарином (800 мл)
+                            </p>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="pt-2 flex flex-wrap items-center gap-4">
+                            <button id="curatorApplyBtn" class="btn-gold-luxe text-xs py-3.5 px-6">
+                                <span>Забронировать этот сценарий</span>
+                                <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                            </button>
+                            <span class="text-[11px] text-zinc-400">
+                                Автоматически заполнит параметры столика в форме
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SPACES & FORMATS SECTION (EDITORIAL ARCHITECTURAL INDEX) -->
+    <section id="spaces" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Пространство</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Залы и форматы отдыха</h2>
+                </div>
+                <p class="text-zinc-400 text-xs sm:text-sm max-w-md leading-relaxed">
                     В заведении предусмотрены как открытые уютные зоны для общения, так и изолированные комнаты для закрытых компаний.
                 </p>
             </div>
@@ -203,68 +358,83 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- SPACE 1: MAIN LOUNGE -->
-                <div class="lounge-card overflow-hidden flex flex-col justify-between">
-                    <div class="img-frame aspect-[16/11]">
-                        <img src="images/interior_bar.jpg" 
-                             alt="Барная зона Дамасс" 
-                             onerror="this.src='https://avatars.mds.yandex.net/get-altay/4303652/2a000001798018053bb3f2be6399da7f6525/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] text-[#c59b27] uppercase tracking-widest font-semibold block mb-1">Основной зал</span>
-                            <h3 class="font-serif font-bold text-xl text-white mb-2">Лаунж & Бар</h3>
+                <div class="editorial-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative editorial-frame aspect-[16/11]">
+                            <img src="images/interior_bar.jpg" 
+                                 alt="Барная зона Дамасс" 
+                                 onerror="this.src='https://avatars.mds.yandex.net/get-altay/4303652/2a000001798018053bb3f2be6399da7f6525/XXL'"/>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-black/85 text-[10px] text-[#d4af37] font-mono tracking-widest uppercase border border-white/10">
+                                01 / LOUNGE
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-1">Основной зал</span>
+                            <h3 class="font-display font-bold text-xl text-white mb-2">Лаунж & Бар</h3>
                             <p class="text-zinc-400 text-xs leading-relaxed">
                                 Просторный зал с мягкими диванами, барной стойкой и легкой фоновой музыкой. Отличное место для встреч с друзьями и вечерних посиделок.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
-                            <span>Ежедневно с 16:00</span>
-                            <a href="#booking" class="text-[#c59b27] font-semibold hover:underline">Выбрать стол</a>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                        <span class="font-mono text-[11px]">Ежедневно с 16:00</span>
+                        <a href="#booking" class="text-[#d4af37] font-semibold hover:underline flex items-center gap-1">
+                            Выбрать стол <span>→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- SPACE 2: VIP ROOMS -->
-                <div class="lounge-card overflow-hidden flex flex-col justify-between">
-                    <div class="img-frame aspect-[16/11]">
-                        <img src="images/interior_vip.jpg" 
-                             alt="VIP комната Дамасс" 
-                             onerror="this.src='https://avatars.mds.yandex.net/get-altay/6382111/2a0000018318b42fc06a17b54ca2b780d078/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] text-[#c59b27] uppercase tracking-widest font-semibold block mb-1">Приватность</span>
-                            <h3 class="font-serif font-bold text-xl text-white mb-2">VIP-комнаты & Караоке</h3>
+                <div class="editorial-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative editorial-frame aspect-[16/11]">
+                            <img src="images/interior_vip.jpg" 
+                                 alt="VIP комната Дамасс" 
+                                 onerror="this.src='https://avatars.mds.yandex.net/get-altay/6382111/2a0000018318b42fc06a17b54ca2b780d078/XXL'"/>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-black/85 text-[10px] text-[#d4af37] font-mono tracking-widest uppercase border border-white/10">
+                                02 / PRIVACY
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-1">Приватность</span>
+                            <h3 class="font-display font-bold text-xl text-white mb-2">VIP-комнаты & Караоке</h3>
                             <p class="text-zinc-400 text-xs leading-relaxed">
                                 Отдельные уютные комнаты для дней рождения, корпоративных вечеров и компаний. Караоке-система и спортивные трансляции.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
-                            <span>По предзаписи</span>
-                            <a href="#booking" class="text-[#c59b27] font-semibold hover:underline">Забронировать VIP</a>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                        <span class="font-mono text-[11px]">По предзаписи</span>
+                        <a href="#booking" class="text-[#d4af37] font-semibold hover:underline flex items-center gap-1">
+                            Забронировать VIP <span>→</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- SPACE 3: HOOKAH LOUNGE -->
-                <div class="lounge-card overflow-hidden flex flex-col justify-between">
-                    <div class="img-frame aspect-[16/11]">
-                        <img src="images/hookah_lounge.jpg" 
-                             alt="Кальянная зона Дамасс" 
-                             onerror="this.src='https://avatars.mds.yandex.net/get-altay/5235091/2a0000017c3d0d29c3a224d85b3f3257cc62/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <span class="text-[10px] text-[#c59b27] uppercase tracking-widest font-semibold block mb-1">Ароматные чаши</span>
-                            <h3 class="font-serif font-bold text-xl text-white mb-2">Кальянная карта & Чай</h3>
+                <div class="editorial-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative editorial-frame aspect-[16/11]">
+                            <img src="images/hookah_lounge.jpg" 
+                                 alt="Кальянная зона Дамасс" 
+                                 onerror="this.src='https://avatars.mds.yandex.net/get-altay/5235091/2a0000017c3d0d29c3a224d85b3f3257cc62/XXL'"/>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-black/85 text-[10px] text-[#d4af37] font-mono tracking-widest uppercase border border-white/10">
+                                03 / AROMA
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-1">Ароматные чаши</span>
+                            <h3 class="font-display font-bold text-xl text-white mb-2">Кальянная карта & Чай</h3>
                             <p class="text-zinc-400 text-xs leading-relaxed">
                                 Классические и авторские чаши от мастеров лаунжа, согревающие чайные церемонии в прозрачных чайниках со свежими ягодами и травами.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
-                            <span>Широкий выбор табаков</span>
-                            <a href="#hookah" class="text-[#c59b27] font-semibold hover:underline">Подробнее</a>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-400">
+                        <span class="font-mono text-[11px]">Широкий выбор табаков</span>
+                        <a href="#hookah" class="text-[#d4af37] font-semibold hover:underline flex items-center gap-1">
+                            Подробнее <span>→</span>
+                        </a>
                     </div>
                 </div>
 
@@ -273,148 +443,145 @@
     </section>
 
     <!-- MENU & CUISINE SECTION -->
-    <section id="menu" class="py-24 border-b border-white/5">
+    <section id="menu" class="py-24 bg-[#0a0c10] border-b border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
                 <div>
-                    <span class="text-[#c59b27] text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Кухня заведения</span>
-                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-white">Европейские и восточные блюда</h2>
+                    <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Кухня заведения</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Европейские и восточные блюда</h2>
                     <p class="text-zinc-400 text-xs sm:text-sm mt-2">Средний чек: 500 – 800 ₽ • Еда навынос и предзаказ к столу</p>
                 </div>
 
-                <!-- TABS -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
-                    <button class="menu-tab-btn active" data-filter="all">Все позиции</button>
-                    <button class="menu-tab-btn" data-filter="grill">Мангал & Гриль</button>
-                    <button class="menu-tab-btn" data-filter="snacks">Закуски & Бургеры</button>
-                    <button class="menu-tab-btn" data-filter="bar">Бар & Чай</button>
+                <!-- CATEGORY TABS (LUXURY SEGMENTED PILL) -->
+                <div class="menu-tabs-capsule p-1 sm:p-1.5 rounded-full bg-[#11141b] border border-white/10 shadow-2xl inline-flex flex-wrap items-center gap-1 shrink-0">
+                    <button class="editorial-tab active" data-filter="all">Все позиции</button>
+                    <button class="editorial-tab" data-filter="grill">Мангал & Гриль</button>
+                    <button class="editorial-tab" data-filter="snacks">Закуски & Бургеры</button>
+                    <button class="editorial-tab" data-filter="bar">Бар & Чай</button>
                 </div>
             </div>
 
-            <!-- DISHES LIST (AUTHENTIC MENU FORMAT) -->
+            <!-- DISHES LIST (AUTHENTIC MENU FORMAT WITH REFINED AESTHETICS) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- DISH 1: МАНГАЛ -->
-                <div class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="grill">
-                    <div class="img-frame aspect-[16/10]">
-                        <img src="images/food_grill.jpg" alt="Блюда на мангале" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Шашлык из мяса на мангале</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 450 ₽</span>
+                <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="grill">
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/food_grill.jpg" alt="Блюда на мангале" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Шашлык из мяса на мангале</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 450 ₽</span>
                             </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                            <p class="text-zinc-400 text-xs leading-relaxed">
                                 Сочное мясо, приготовленное на углях с маринованным луком, лавашом и фирменным пряным соусом.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>Подается горячим</span>
-                            <span class="text-[#c59b27]">Европейская & Восточная</span>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>Подается горячим</span>
+                        <span class="text-[#d4af37]">Европейская & Восточная</span>
                     </div>
                 </div>
 
                 <!-- DISH 2: БУРГЕРЫ -->
-                <div class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="snacks">
-                    <div class="img-frame aspect-[16/10]">
-                        <img src="images/food_grill.jpg" alt="Бургеры" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Фирменные бургеры DAMASS</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 380 ₽</span>
+                <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="snacks">
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/food_grill.jpg" alt="Бургеры" onerror="this.src='https://avatars.mds.yandex.net/get-altay/16470051/2a000001972c782aafdc897c98dcf60aa6e6/XXL'"/>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Фирменные бургеры DAMASS</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 380 ₽</span>
                             </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                            <p class="text-zinc-400 text-xs leading-relaxed">
                                 Котлета из натурального мяса, карамелизированный лук, сыр чеддер, хрустящий салат и фирменный бургер-соус.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>С картофелем фри</span>
-                            <span class="text-[#c59b27]">Хит бара</span>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>С картофелем фри</span>
+                        <span class="text-[#d4af37]">Хит бара</span>
                     </div>
                 </div>
 
                 <!-- DISH 3: ЗАКУСКИ К ПИВУ -->
-                <div class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="snacks">
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Сырная и мясная тарелка</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 490 ₽</span>
-                            </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Идеальное дополнение к вечерним напиткам: ассорти сыров, мясные деликатесы, мед, орехи и оливки.
-                            </p>
+                <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="snacks">
+                    <div class="p-6">
+                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Для дружной компании</span>
+                        <div class="flex justify-between items-baseline gap-2 mb-2">
+                            <h3 class="font-display font-bold text-lg text-white">Сырная и мясная тарелка</h3>
+                            <span class="text-[#d4af37] font-mono font-bold text-base">от 490 ₽</span>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>Для компании</span>
-                            <span class="text-[#c59b27]">Закуски</span>
-                        </div>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Идеальное дополнение к вечерним напиткам: ассорти сыров, мясные деликатесы, мед, орехи и оливки.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>Для компании</span>
+                        <span class="text-[#d4af37]">Закуски</span>
                     </div>
                 </div>
 
                 <!-- DISH 4: ЧАЙНЫЕ ЦЕРЕМОНИИ -->
-                <div class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="bar">
-                    <div class="img-frame aspect-[16/10]">
-                        <img src="images/tea_drinks.jpg" alt="Чайная церемония" onerror="this.src='https://avatars.mds.yandex.net/get-altay/12728107/2a0000019003787736a780607af271611a5b/XXL'"/>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Авторские согревающие чаи</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 280 ₽</span>
+                <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
+                    <div>
+                        <div class="editorial-frame aspect-[16/10]">
+                            <img src="images/tea_drinks.jpg" alt="Чайная церемония" onerror="this.src='https://avatars.mds.yandex.net/get-altay/12728107/2a0000019003787736a780607af271611a5b/XXL'"/>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-baseline gap-2 mb-2">
+                                <h3 class="font-display font-bold text-lg text-white">Авторские согревающие чаи</h3>
+                                <span class="text-[#d4af37] font-mono font-bold text-base">от 280 ₽</span>
                             </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+                            <p class="text-zinc-400 text-xs leading-relaxed">
                                 Облепиха с розмарином, марокканский чай с мятой и цитрусом, китайские сорта пуэра и улуна в стеклянных чайниках со свечой.
                             </p>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>Объем 800 мл</span>
-                            <span class="text-[#c59b27]">Чайная карта</span>
-                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>Объем 800 мл</span>
+                        <span class="text-[#d4af37]">Чайная карта</span>
                     </div>
                 </div>
 
                 <!-- DISH 5: БАР & КРАФТ -->
-                <div class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="bar">
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Крафтовое пиво & Напитки</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 220 ₽</span>
-                            </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Широкий ассортимент крафтового пенного, освежающие безалкогольные коктейли, лимонады и свежесваренный кофе.
-                            </p>
+                <div class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
+                    <div class="p-6">
+                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Освежающая линейка</span>
+                        <div class="flex justify-between items-baseline gap-2 mb-2">
+                            <h3 class="font-display font-bold text-lg text-white">Крафтовое пиво & Напитки</h3>
+                            <span class="text-[#d4af37] font-mono font-bold text-base">от 220 ₽</span>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>Барное меню</span>
-                            <span class="text-[#c59b27]">Холодные напитки</span>
-                        </div>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Широкий ассортимент крафтового пенного, освежающие безалкогольные коктейли, лимонады и свежесваренный кофе.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>Барное меню</span>
+                        <span class="text-[#d4af37]">Холодные напитки</span>
                     </div>
                 </div>
 
                 <!-- DISH 6: КАЛЬЯНЫ -->
-                <div id="hookah" class="menu-dish-card lounge-card overflow-hidden flex flex-col justify-between" data-category="bar">
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start gap-2">
-                                <h3 class="font-serif font-bold text-lg text-white">Паровые коктейли DAMASS</h3>
-                                <span class="text-[#c59b27] font-bold text-sm">от 700 ₽</span>
-                            </div>
-                            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
-                                Большой парк премиальных кальянов, классические и фруктовые чаши, индивидуальный подбор крепости и вкусовых миксов.
-                            </p>
+                <div id="hookah" class="menu-dish-card editorial-card flex flex-col justify-between" data-category="bar">
+                    <div class="p-6">
+                        <span class="text-[10px] text-[#d4af37] uppercase tracking-widest font-semibold block mb-2">Фирменный лаунж</span>
+                        <div class="flex justify-between items-baseline gap-2 mb-2">
+                            <h3 class="font-display font-bold text-lg text-white">Паровые коктейли DAMASS</h3>
+                            <span class="text-[#d4af37] font-mono font-bold text-base">от 700 ₽</span>
                         </div>
-                        <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
-                            <span>18+</span>
-                            <span class="text-[#c59b27]">Lounge</span>
-                        </div>
+                        <p class="text-zinc-400 text-xs leading-relaxed">
+                            Большой парк премиальных кальянов, классические и фруктовые чаши, индивидуальный подбор крепости и вкусовых миксов.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                        <span>18+</span>
+                        <span class="text-[#d4af37]">Lounge</span>
                     </div>
                 </div>
 
@@ -423,125 +590,291 @@
         </div>
     </section>
 
-    <!-- RESERVATION SECTION (CLEAN EDITORIAL FORM, NO SHOPPING CART) -->
-    <section id="booking" class="py-24 bg-[#0b0d11] border-b border-white/5">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lounge-card p-8 sm:p-12 border-white/10 shadow-2xl relative overflow-hidden">
+    <!-- ========================================================================
+         ORIGINAL BLOCK 2: NIGHT BILL & DEPOSIT ESTIMATOR (КАЛЬКУЛЯТОР ВЕЧЕРА)
+         Интерактивный расчет депозита и среднего чека на компанию гостей
+         ======================================================================== -->
+    <section id="estimator" class="py-24 border-b border-white/5 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="editorial-card p-8 sm:p-12 bg-[#0e1117] border-[#d4af37]/35 shadow-2xl relative">
                 
-                <div class="text-center max-w-xl mx-auto mb-10">
-                    <span class="text-[#c59b27] text-xs uppercase tracking-[0.2em] font-semibold block mb-2">Бронирование</span>
-                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-white">Забронировать стол или VIP-зал</h2>
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Прозрачный расчет</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Калькулятор депозита вечера</h2>
                     <p class="text-zinc-400 text-xs sm:text-sm mt-3">
-                        Оставьте заявку онлайн или позвоните администратору по номеру <a href="tel:+79373888002" class="text-white font-semibold underline">+7 (937) 388-80-02</a>
+                        Оцените примерный чек для вашей компании на основе реальных цен заведения (средний чек: 500 – 800 ₽/чел).
                     </p>
                 </div>
 
-                <form id="bookingForm" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
+                    
+                    <!-- Left: Controls -->
+                    <div class="space-y-6">
                         
+                        <!-- Guest Counter -->
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Ваше имя</label>
-                            <input type="text" id="bookName" placeholder="Иван" required class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-[#c59b27] transition-colors"/>
+                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Количество гостей в компании</label>
+                            <div class="flex items-center gap-4">
+                                <button type="button" id="calcMinusGuest" class="calc-counter-btn" aria-label="Меньше">−</button>
+                                <div class="px-6 py-2.5 bg-[#07080a] border border-white/10 rounded-sm text-center min-w-[90px]">
+                                    <span id="calcGuestsCount" class="font-mono font-bold text-xl text-white">4</span>
+                                    <span class="text-xs text-zinc-500 ml-1">чел</span>
+                                </div>
+                                <button type="button" id="calcPlusGuest" class="calc-counter-btn" aria-label="Больше">+</button>
+                            </div>
                         </div>
 
+                        <!-- Zone Selector -->
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Контактный телефон</label>
-                            <input type="tel" id="bookPhone" placeholder="+7 (900) 000-00-00" required class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white placeholder-zinc-600 text-sm focus:outline-none focus:border-[#c59b27] transition-colors"/>
+                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Предпочтительная зона</label>
+                            <div class="flex gap-3">
+                                <button type="button" id="calcZoneMain" class="calc-switch-btn active flex-1">Основной лаунж</button>
+                                <button type="button" id="calcZoneVip" class="calc-switch-btn flex-1">VIP с караоке</button>
+                            </div>
                         </div>
 
+                        <!-- Hookah Selector -->
                         <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Дата визита</label>
-                            <input type="date" id="bookDate" required class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white text-sm focus:outline-none focus:border-[#c59b27] transition-colors"/>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Время (с 16:00)</label>
-                            <select id="bookTime" class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white text-sm focus:outline-none focus:border-[#c59b27] transition-colors">
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
-                                <option value="19:00" selected>19:00</option>
-                                <option value="20:00">20:00</option>
-                                <option value="21:00">21:00</option>
-                                <option value="22:00">22:00</option>
-                                <option value="23:00">23:00</option>
+                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Паровые коктейли (кальяны)</label>
+                            <select id="calcHookahSelect" class="luxe-input py-2.5">
+                                <option value="0">Без кальяна</option>
+                                <option value="1" selected>1 фирменная чаша (+700 ₽)</option>
+                                <option value="2">2 авторские чаши (+1 400 ₽)</option>
+                                <option value="3">3 чаши на длинный вечер (+2 100 ₽)</option>
                             </select>
                         </div>
 
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Выбор зала</label>
-                            <select id="bookHall" class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white text-sm focus:outline-none focus:border-[#c59b27] transition-colors">
-                                <option value="Основной лаунж-зал">Основной лаунж-зал (диваны)</option>
-                                <option value="VIP-комната с караоке">VIP-комната с караоке</option>
-                                <option value="Столик у бара">Столик у бара</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Количество гостей</label>
-                            <select id="bookGuests" class="w-full px-4 py-3.5 rounded-lg bg-[#07080a] border border-white/10 text-white text-sm focus:outline-none focus:border-[#c59b27] transition-colors">
-                                <option value="1-2 человека">1–2 человека</option>
-                                <option value="3-4 человека" selected>3–4 человека</option>
-                                <option value="5-8 человек">5–8 человек</option>
-                                <option value="Более 8 человек (банкет/VIP)">Более 8 человек (VIP)</option>
-                            </select>
+                        <!-- Add-ons Checkboxes -->
+                        <div class="space-y-3 pt-1">
+                            <label class="flex items-center gap-3 cursor-pointer text-xs text-zinc-300">
+                                <input type="checkbox" id="calcGrillToggle" checked class="w-4 h-4 accent-[#d4af37] rounded"/>
+                                <span>Блюда на мангале & сочные бургеры (горячий ужин)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer text-xs text-zinc-300">
+                                <input type="checkbox" id="calcTeaToggle" checked class="w-4 h-4 accent-[#d4af37] rounded"/>
+                                <span>Авторская чайная церемония в стеклянных чайниках</span>
+                            </label>
                         </div>
 
                     </div>
 
-                    <div class="pt-2 text-center">
-                        <button type="submit" class="btn-gold w-full sm:w-auto min-w-[260px]">
-                            Отправить заявку на бронь
+                    <!-- Right: Dynamic Receipt Display -->
+                    <div class="p-6 bg-[#07080a] border border-[#d4af37]/30 rounded-sm relative">
+                        <div class="flex justify-between items-center pb-4 border-b border-white/10">
+                            <div>
+                                <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Ориентировочный итог</span>
+                                <span class="text-xs font-bold text-white uppercase tracking-wider">Чек компании</span>
+                            </div>
+                            <span class="text-[10px] px-2 py-1 bg-[#d4af37]/15 text-[#d4af37] font-mono rounded">DAMASS CALC</span>
+                        </div>
+
+                        <div class="py-6 text-center">
+                            <div id="calcTotalSum" class="font-display font-black text-4xl sm:text-5xl text-gold-gradient">
+                                ~3 880 ₽
+                            </div>
+                            <div id="calcPerPerson" class="text-xs text-zinc-400 mt-2 font-mono">
+                                ~970 ₽ / чел (средний чек)
+                            </div>
+                        </div>
+
+                        <div class="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-white/5">
+                            * Сумма носит ознакомительный характер на основе выбранных позиций. Точный счет формируется по заказу в заведении.
+                        </div>
+
+                        <button type="button" id="calcBookEstimateBtn" class="btn-gold-luxe w-full mt-5 text-xs py-3.5">
+                            Забронировать с этим расчетом
                         </button>
-                        <p class="text-[11px] text-zinc-500 mt-3">
-                            Бронирование бесплатное. Администратор перезвонит вам для подтверждения стола.
-                        </p>
                     </div>
-                </form>
+
+                </div>
 
             </div>
+
+        </div>
+    </section>
+
+    <!-- RESERVATION SECTION WITH VIP GUEST PASS LIVE PREVIEW -->
+    <section id="booking" class="py-24 bg-[#0a0c10] border-b border-white/5 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">Бронирование</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Забронировать стол или VIP-зал</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm mt-3">
+                    Оставьте заявку онлайн или позвоните администратору по номеру <a href="tel:+79373888002" class="text-[#d4af37] font-semibold underline underline-offset-4">+7 (937) 388-80-02</a>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- LEFT: BESPOKE VIP GUEST PASS (LIVE PREVIEW) -->
+                <div class="lg:col-span-5">
+                    <div class="guest-pass-card p-6 sm:p-8 rounded-sm">
+                        <div class="flex justify-between items-start border-b border-[#d4af37]/25 pb-4">
+                            <div>
+                                <span class="font-display font-black text-xl tracking-[0.2em] text-white block">DAMASS</span>
+                                <span class="text-[9px] uppercase tracking-[0.25em] text-[#d4af37] font-semibold">Guest Pass • Канаш</span>
+                            </div>
+                            <span id="passCode" class="text-xs font-mono font-bold text-[#d4af37] bg-black/60 px-2.5 py-1 border border-[#d4af37]/30">
+                                DMS-2026
+                            </span>
+                        </div>
+
+                        <div class="py-6 space-y-4 text-xs">
+                            <div>
+                                <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Имя гостя</span>
+                                <span id="passGuestName" class="font-display font-bold text-lg text-white">Гость DAMASS</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Дата визита</span>
+                                    <span id="passDate" class="text-sm font-medium text-white font-mono">Сегодня</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Время</span>
+                                    <span id="passTime" class="text-sm font-medium text-white font-mono">19:00</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Зал</span>
+                                    <span id="passHall" class="text-sm font-medium text-[#d4af37]">Основной лаунж-зал</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-zinc-500 uppercase tracking-widest block">Компания</span>
+                                    <span id="passGuests" class="text-sm font-medium text-white">3–4 человека</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-zinc-500">
+                            <span>Чебоксарская ул., 29</span>
+                            <span class="text-emerald-400 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                Гарантия брони
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: RESERVATION INPUT FORM -->
+                <div class="lg:col-span-7">
+                    <div class="editorial-card p-6 sm:p-10 bg-[#0e1117] border-white/10 shadow-2xl">
+                        
+                        <form id="bookingForm" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Ваше имя</label>
+                                    <input type="text" id="bookName" placeholder="Иван" required class="luxe-input"/>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Контактный телефон</label>
+                                    <input type="tel" id="bookPhone" placeholder="+7 (900) 000-00-00" required class="luxe-input"/>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Дата визита</label>
+                                    <input type="date" id="bookDate" required class="luxe-input"/>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Время (с 16:00)</label>
+                                    <select id="bookTime" class="luxe-input">
+                                        <option value="16:00">16:00</option>
+                                        <option value="17:00">17:00</option>
+                                        <option value="18:00">18:00</option>
+                                        <option value="19:00" selected>19:00</option>
+                                        <option value="20:00">20:00</option>
+                                        <option value="21:00">21:00</option>
+                                        <option value="22:00">22:00</option>
+                                        <option value="23:00">23:00</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Выбор зала</label>
+                                    <select id="bookHall" class="luxe-input">
+                                        <option value="Основной лаунж-зал">Основной лаунж-зал (диваны)</option>
+                                        <option value="VIP-комната с караоке">VIP-комната с караоке</option>
+                                        <option value="Столик у бара">Столик у бара</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-semibold mb-2">Количество гостей</label>
+                                    <select id="bookGuests" class="luxe-input">
+                                        <option value="1-2 человека">1–2 человека</option>
+                                        <option value="3-4 человека" selected>3–4 человека</option>
+                                        <option value="5-8 человек">5–8 человек</option>
+                                        <option value="Более 8 человек (банкет/VIP)">Более 8 человек (VIP)</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="pt-3 text-center sm:text-left">
+                                <button type="submit" class="btn-gold-luxe w-full sm:w-auto min-w-[280px]">
+                                    <span>Отправить заявку на бронь</span>
+                                    <span class="material-symbols-outlined text-sm">send</span>
+                                </button>
+                                <p class="text-[11px] text-zinc-500 mt-3">
+                                    Бронирование бесплатное. Администратор перезвонит вам для подтверждения стола.
+                                </p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
     <!-- CONTACTS & LOCATION SECTION -->
-    <section id="contacts" class="py-24 border-t border-white/5">
+    <section id="contacts" class="py-24 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <div class="lg:col-span-6 space-y-6">
-                    <span class="text-[#c59b27] text-xs uppercase tracking-[0.2em] font-semibold block">Локация</span>
-                    <h2 class="font-serif font-bold text-3xl sm:text-4xl text-white">Контакты и адрес</h2>
+                    <span class="text-[#d4af37] text-xs uppercase tracking-[0.25em] font-semibold block">Локация</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Контакты и адрес</h2>
                     <p class="text-zinc-400 text-sm leading-relaxed font-light">
                         Кафе & лаунж-бар «Дамасс» находится в Канаше по адресу: Чебоксарская улица, 29. Рядом предусмотрена удобная парковка.
                     </p>
 
                     <div class="space-y-4 pt-2">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-[#15181e] border border-white/10 flex items-center justify-center text-[#c59b27] shrink-0">
+                            <div class="w-10 h-10 bg-[#12151c] border border-white/10 flex items-center justify-center text-[#d4af37] shrink-0">
                                 <span class="material-symbols-outlined">location_on</span>
                             </div>
                             <div>
-                                <div class="text-[11px] text-zinc-400 uppercase tracking-wider">Адрес заведения:</div>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-wider">Адрес заведения:</div>
                                 <div class="text-sm font-bold text-white">Чувашская Республика, г. Канаш, Чебоксарская улица, 29</div>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-[#15181e] border border-white/10 flex items-center justify-center text-[#c59b27] shrink-0">
+                            <div class="w-10 h-10 bg-[#12151c] border border-white/10 flex items-center justify-center text-[#d4af37] shrink-0">
                                 <span class="material-symbols-outlined">call</span>
                             </div>
                             <div>
-                                <div class="text-[11px] text-zinc-400 uppercase tracking-wider">Телефон:</div>
-                                <a href="tel:+79373888002" class="text-sm font-bold text-white hover:text-[#c59b27] transition-colors">+7 (937) 388-80-02</a>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-wider">Телефон:</div>
+                                <a href="tel:+79373888002" class="text-sm font-bold text-white hover:text-[#d4af37] transition-colors font-mono">+7 (937) 388-80-02</a>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-[#15181e] border border-white/10 flex items-center justify-center text-[#c59b27] shrink-0">
+                            <div class="w-10 h-10 bg-[#12151c] border border-white/10 flex items-center justify-center text-[#d4af37] shrink-0">
                                 <span class="material-symbols-outlined">schedule</span>
                             </div>
                             <div>
-                                <div class="text-[11px] text-zinc-400 uppercase tracking-wider">График работы:</div>
+                                <div class="text-[10px] text-zinc-500 uppercase tracking-wider">График работы:</div>
                                 <div class="text-sm text-zinc-200">
                                     Пн – Чт: 16:00 – 00:00<br/>
                                     Пт – Сб: 16:00 – 01:00<br/>
@@ -551,14 +884,14 @@
                         </div>
                     </div>
 
-                    <div class="pt-4 flex flex-wrap gap-4">
-                        <a href="https://t.me/cafe_damass" target="_blank" class="btn-outline text-xs">
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <a href="https://t.me/cafe_damass" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
                             💬 Telegram @cafe_damass
                         </a>
-                        <a href="https://vk.ru/damasskanash" target="_blank" class="btn-outline text-xs">
+                        <a href="https://vk.ru/damasskanash" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
                             ВКонтакте
                         </a>
-                        <a href="https://yandex.ru/maps/org/86547114816" target="_blank" class="btn-outline text-xs">
+                        <a href="https://yandex.ru/maps/org/86547114816" target="_blank" class="btn-editorial-ghost text-xs py-2.5 px-4">
                             Карточка на Яндекс Картах
                         </a>
                     </div>
@@ -566,24 +899,10 @@
 
                 <!-- EMBEDDED ACCURATE MAP WITH PIN -->
                 <div class="lg:col-span-6">
-                    <div class="lounge-card p-3 border-white/10 shadow-2xl relative">
-                        <!-- Floating Location Pin Badge -->
-                        <div class="absolute top-6 left-6 z-10 glass-card p-3.5 rounded-xl bg-zinc-950/90 border border-white/10 shadow-2xl flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-[#c59b27] text-black flex items-center justify-center shrink-0 font-bold">
-                                <span class="material-symbols-outlined text-xl">nightlife</span>
-                            </div>
-                            <div>
-                                <div class="text-xs font-bold text-white flex items-center gap-1.5">
-                                    ДАМАСС • Lounge & Bar
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                                </div>
-                                <div class="text-[11px] text-zinc-400">Чебоксарская ул., 29 • Канаш</div>
-                            </div>
-                        </div>
-
-                        <div class="relative w-full h-[380px] rounded-xl overflow-hidden bg-zinc-950">
-                            <!-- Yandex Maps Widget with exact coordinates & explicit placemark pin -->
-                            <iframe src="https://yandex.ru/map-widget/v1/?mode=search&text=%D0%94%D0%B0%D0%BC%D0%B0%D1%81%D1%81%20%D0%9A%D0%B0%D0%BD%D0%B0%D1%88%20%D0%A7%D0%B5%D0%B1%D0%BE%D0%BA%D1%81%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F%2029&ll=47.472756%2C55.51433&z=17&pt=47.472756,55.51433,pm2orgm" 
+                    <div class="editorial-card p-2 sm:p-3 bg-[#0d0f14] border-white/10 shadow-2xl relative">
+                        <!-- Map iFrame with pure placemark pin -->
+                        <div class="relative w-full h-[420px] bg-zinc-950 overflow-hidden rounded-sm">
+                            <iframe src="https://yandex.ru/map-widget/v1/?ll=47.472756%2C55.51433&z=17&pt=47.472756,55.51433,pm2orgm" 
                                     width="100%" 
                                     height="100%" 
                                     frameborder="0" 
@@ -609,7 +928,36 @@
         </div>
     </footer>
 
-    <!-- Main JS -->
+    <!-- BESPOKE CONFIRMATION MODAL DIALOG (No browser alert) -->
+    <div id="bespokeModal" class="bespoke-modal-backdrop" aria-hidden="true">
+        <div class="bespoke-modal-dialog">
+            <div class="text-center space-y-4">
+                <div class="w-14 h-14 mx-auto rounded-full border border-[#d4af37] bg-[#d4af37]/10 flex items-center justify-center text-[#d4af37]">
+                    <span class="material-symbols-outlined text-3xl">check</span>
+                </div>
+                
+                <div>
+                    <span class="text-[10px] text-[#d4af37] uppercase tracking-[0.25em] font-semibold block">DAMASS RESERVATION</span>
+                    <h3 class="font-display font-bold text-2xl text-white mt-1">Заявка на бронь принята</h3>
+                </div>
+
+                <p class="text-zinc-400 text-xs leading-relaxed">
+                    Администратор свяжется с вами в течение 10–15 минут для подтверждения бронирования стола.
+                </p>
+
+                <!-- Receipt details inserted via JS -->
+                <div id="modalConfirmDetails" class="p-4 bg-[#0a0c10] border border-white/5 text-left rounded-sm"></div>
+
+                <div class="pt-2">
+                    <button type="button" id="modalCloseBtn" class="btn-gold-luxe w-full text-xs py-3">
+                        Отлично, жду звонка
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript Application Engine -->
     <script src="js/main.js"></script>
 </body>
 </html>

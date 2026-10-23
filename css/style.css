@@ -1,176 +1,517 @@
-/* DAMASS Lounge & Bar — Editorial Noir Design System */
+/* ==========================================================================
+   DAMASS LOUNGE & BAR — BESPOKE EDITORIAL NOIR DESIGN SYSTEM
+   Authentic Evening Hospitality • Kanash, Cheboksarskaya 29
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --bg-dark: #07080a;
-  --bg-surface: #0f1115;
-  --bg-card: #15181e;
-  --bg-card-hover: #1b1f27;
+  --bg-deep: #060709;
+  --bg-surface: #0c0e12;
+  --bg-card: #12151c;
+  --bg-card-elevated: #181c25;
+  --bg-card-glass: rgba(18, 21, 28, 0.75);
+
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #8e6f1f;
+  --gold-glow: rgba(212, 175, 55, 0.22);
+  --gold-gradient: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #94711f 100%);
+  --gold-metallic: linear-gradient(105deg, #dfba49 0%, #fff2b2 35%, #c89e2e 70%, #8c6916 100%);
   
-  --accent-gold: #c59b27;
-  --accent-amber: #d97706;
-  --accent-bronze: #855325;
-  --gradient-gold: linear-gradient(135deg, #c59b27 0%, #eab308 50%, #9a6a12 100%);
+  --text-pure: #ffffff;
+  --text-main: #f1f5f9;
+  --text-muted: #8e9bb0;
+  --text-faint: #546075;
   
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-gold: rgba(197, 155, 39, 0.35);
-  
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, sans-serif;
-  
-  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-gold: rgba(212, 175, 55, 0.25);
+  --border-gold-strong: rgba(212, 175, 55, 0.55);
+
+  --font-serif-display: 'Playfair Display', Georgia, serif;
+  --font-serif-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-dark);
-  color: var(--text-primary);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
   font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
 }
 
 body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 100% 40%, rgba(142, 111, 31, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 0% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
-.font-serif {
-  font-family: var(--font-serif);
+/* Typography Helpers */
+.font-editorial {
+  font-family: var(--font-serif-editorial);
 }
 
-/* Glassmorphism Navigation */
-.glass-nav {
-  background: rgba(7, 8, 10, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+.font-display {
+  font-family: var(--font-serif-display);
+}
+
+.text-gold-gradient {
+  background: var(--gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Film Grain Texture Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Atmospheric Ambient Lights */
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top Live Status Bar */
+.top-status-bar {
+  background: rgba(10, 12, 16, 0.95);
   border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
 }
 
-/* Cards & Frames */
-.lounge-card {
+/* Navigation */
+.header-glass {
+  background: rgba(6, 7, 9, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s var(--ease-cinematic);
+  padding: 6px 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 1280px) {
+  .nav-link {
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--gold-primary);
+  transition: width 0.3s var(--ease-cinematic);
+}
+
+.nav-link:hover {
+  color: var(--text-pure);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Luxury Editorial Buttons */
+.btn-gold-luxe {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--gold-gradient);
+  color: #060709;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s var(--ease-cinematic);
+  box-shadow: 0 4px 25px rgba(212, 175, 55, 0.28);
+}
+
+.btn-gold-luxe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.7s var(--ease-cinematic);
+}
+
+.btn-gold-luxe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 35px rgba(212, 175, 55, 0.45);
+}
+
+.btn-gold-luxe:hover::before {
+  left: 100%;
+}
+
+.btn-editorial-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border-radius: 2px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  cursor: pointer;
+  transition: all 0.35s var(--ease-cinematic);
+}
+
+.btn-editorial-ghost:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Luxury Cards */
+.editorial-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  transition: var(--transition);
-}
-
-.lounge-card:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(197, 155, 39, 0.08);
-}
-
-/* Buttons */
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--gradient-gold);
-  color: #07080a;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 14px 30px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 20px rgba(197, 155, 39, 0.3);
-}
-
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(197, 155, 39, 0.5);
-  filter: brightness(1.08);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: transparent;
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
-  padding: 14px 28px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.btn-outline:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  background: rgba(197, 155, 39, 0.05);
-}
-
-/* Tab filter button */
-.menu-tab-btn {
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-subtle);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.menu-tab-btn:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.menu-tab-btn.active {
-  background: #1e222b;
-  color: var(--accent-gold);
-  border-color: var(--border-gold);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Image zoom effect */
-.img-frame {
+  border-radius: 4px;
+  transition: all 0.45s var(--ease-cinematic);
   overflow: hidden;
-  position: relative;
 }
 
-.img-frame img {
+.editorial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.45s var(--ease-cinematic);
+  pointer-events: none;
+}
+
+.editorial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.07);
+}
+
+.editorial-card:hover::before {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Image Frames with Zoom */
+.editorial-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.85s var(--ease-cinematic), filter 0.85s var(--ease-cinematic);
 }
 
-.lounge-card:hover .img-frame img {
-  transform: scale(1.04);
+.editorial-card:hover .editorial-frame img {
+  transform: scale(1.06);
+}
+
+/* Decorative Gold Corner Marks */
+.gold-corners {
+  position: relative;
+}
+
+.gold-corners::before,
+.gold-corners::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--gold-primary);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.gold-corners::before {
+  top: 8px;
+  left: 8px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.gold-corners::after {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* ORIGINAL BLOCK 1: EVENING CURATOR WIDGET */
+.mood-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.mood-chip:hover {
+  color: #fff;
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.mood-chip.active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(142, 111, 31, 0.08) 100%);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.15);
+}
+
+/* ORIGINAL BLOCK 2: ESTIMATOR CALCULATOR */
+.calc-counter-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--gold-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s var(--ease-cinematic);
+}
+
+.calc-counter-btn:hover {
+  background: var(--gold-primary);
+  color: #060709;
+}
+
+.calc-switch-btn {
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.calc-switch-btn.active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+  font-weight: 600;
+}
+
+/* Category Filter Tabs — Modern Haute-Cuisine Capsule */
+.menu-tabs-capsule {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menu-tabs-capsule::-webkit-scrollbar {
+  display: none;
+}
+
+.editorial-tab {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-cinematic);
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .editorial-tab {
+    padding: 9px 22px;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+.editorial-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.editorial-tab.active {
+  background: var(--gold-gradient);
+  color: #060709;
+  font-weight: 700;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+}
+
+/* VIP Guest Pass styling */
+.guest-pass-card {
+  position: relative;
+  background: linear-gradient(145deg, #101319 0%, #090b0e 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), inset 0 0 40px rgba(212, 175, 55, 0.03);
+}
+
+.guest-pass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px dashed rgba(212, 175, 55, 0.15);
+  margin: 8px;
+  pointer-events: none;
+}
+
+/* Input Fields */
+.luxe-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #090b0f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.luxe-input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+  background: #0d1016;
+}
+
+.luxe-input::placeholder {
+  color: #4b5568;
+}
+
+/* Custom Modal Notification */
+.bespoke-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 7, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-cinematic);
+}
+
+.bespoke-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bespoke-modal-dialog {
+  background: #11141c;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  max-width: 500px;
+  width: 100%;
+  padding: 36px;
+  border-radius: 4px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95), 0 0 40px rgba(212, 175, 55, 0.1);
+  transform: translateY(20px) scale(0.96);
+  transition: all 0.4s var(--ease-cinematic);
+  position: relative;
+}
+
+.bespoke-modal-backdrop.active .bespoke-modal-dialog {
+  transform: translateY(0) scale(1);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a1e27;
-  border-radius: 4px;
+  background: #1d222e;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-gold);
+  background: var(--gold-primary);
 }
